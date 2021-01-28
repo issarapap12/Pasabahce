@@ -217,6 +217,7 @@ class _Splash2State extends State<Splash2> {
 
   Widget display2() {
     return OutlineButton(
+      borderSide: BorderSide(color: Color(0xFFFFFFFF)),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0),
         side: BorderSide(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:newflutter/screens/checkEmail.dart';
+import 'package:newflutter/screens/loading.dart';
 
 class PasswordScreen extends StatefulWidget {
   @override
@@ -54,34 +56,34 @@ class _PasswordScreenState extends State<PasswordScreen> {
 
   Widget display3() {
     return RaisedButton(
-      color: Color(0xFFD6A578),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
-          color: Colors.yellow.shade900,
+        color: Color(0xFFD6A578),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+          side: BorderSide(
+            color: Colors.yellow.shade900,
+          ),
         ),
-      ),
-      child: Text(
-        '               Reset my password               ',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16.0,
+        child: Text(
+          '               Reset my password               ',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16.0,
+          ),
         ),
-      ),
-      onPressed: () {
-        print('You Click Sign Up');
-        // navigateToSecondPage(BuildContext context) {
-        //   Navigator.push(
-        //     context,
-        //     MaterialPageRoute(
-        //       builder: (context) {
-        //         return SignIn();
-        //       },
-        //     ),
-        //   );
-        // }
-      },
-    );
+        onPressed: () {
+          print('You Click Sign Up');
+          // navigateToSecondPage(BuildContext context) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Loading();
+              },
+            ),
+          );
+        }
+        // },
+        );
   }
 
   Widget build(BuildContext context) {

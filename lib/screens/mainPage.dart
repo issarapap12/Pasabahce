@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:newflutter/itemdetail/R90.dart';
+import 'package:newflutter/itemdetail/godBowl.dart';
+import 'package:newflutter/itemdetail/kavukvase.dart';
+import 'package:newflutter/itemdetail/mystical.dart';
+import 'package:newflutter/itemdetail/rumiliKase.dart';
+import 'package:newflutter/itemdetail/soteria.dart';
+import 'package:newflutter/screens/bookMark.dart';
+import 'package:newflutter/screens/cart.dart';
 
 import 'package:newflutter/screens/hagia.dart';
+import 'package:newflutter/screens/menu.dart';
+import 'package:newflutter/screens/productDetail.dart';
 import 'package:newflutter/screens/search.dart';
 
 import 'package:newflutter/screens/seeAll.dart';
+import 'package:newflutter/screens/seeAll10.dart';
+import 'package:newflutter/screens/setting.dart';
 
 class MainPage extends StatefulWidget {
+  // MainPage(Key key) : super(key: key);
   @override
   _MainPageState createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[];
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   Widget showDrawer() {
     return Drawer(
       child: ListView(
@@ -30,12 +33,6 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
-
-  // Widget showListP() {
-  //   return ListTile(
-  //     leading: Icon(Icons.access_alarms_rounded),
-  //   );
-  // }
 
   Widget showHead() {
     return DrawerHeader(
@@ -51,21 +48,12 @@ class _MainPageState extends State<MainPage> {
         toolbarHeight: 120,
         flexibleSpace: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
-          // decoration: BoxDecoration(
-          //   color: Colors.white,
-          //   borderRadius: BorderRadius.only(
-          //     topLeft: Radius.circular(0.0),
-          //     topRight: Radius.circular(0.0),
-          //   ),
-          // ),
         ),
         title: Text(
           'STORE',
           textAlign: TextAlign.center,
         ),
-
         backgroundColor: Colors.black,
-
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20.0),
@@ -79,196 +67,181 @@ class _MainPageState extends State<MainPage> {
                       ),
                     );
                   })),
-
-          // Padding(
-          //   padding: EdgeInsets.only(right: 20.0),
-          //   child: Icon(
-          //     Icons.shopping_cart,
-          //     color: Colors.white,
-          //   ),
-          // ),
         ],
-        // iconTheme: IconThemeData(color: Colors.black),
       ),
       drawer: showDrawer(),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10.0),
-        child: Center(
-          child: ListView(
-            children: <Widget>[
-              Text(
-                'Ottoman Collection',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                ),
-              ),
-              Text(
-                'Find the perfect watch for your wrist',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                ),
-              ),
-
-              Row(
+      body: PageView(
+        // controller: _pagecontroller,
+        // onPageChanged: _onPageChange,
+        // physics: NeverScrollableScrollPhysics(),
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Center(
+              child: ListView(
                 children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 10.0, top: 20.0),
-                      child: Text(
-                        "Categories",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                  Text(
+                    'Ottoman Collection',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 20.0, right: 20.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        print('3');
-                        var route =
-                            MaterialPageRoute(builder: (context) => SeeAll());
-                        Navigator.of(context).push(route);
-                      },
-                      child: Text(
-                        "See All",
-                        style: TextStyle(color: Colors.deepPurple),
-                      ),
+                  Text(
+                    'Find the perfect watch for your wrist',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15,
                     ),
+                  ),
+
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10.0, top: 20.0),
+                          child: Text(
+                            "Categories",
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.0, right: 20.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            print('3');
+                            var route = MaterialPageRoute(
+                                builder: (context) => SeeAll10());
+                            Navigator.of(context).push(route);
+                          },
+                          child: Text(
+                            "See All",
+                            style: TextStyle(color: Colors.deepPurple),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: itemsList(),
+                  ), // Items List Container
+
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10.0, top: 20.0),
+                          child: Text(
+                            "Featured products",
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.0, right: 20.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            print('2');
+                            // var route = MaterialPageRoute(
+                            //     builder: (context) => HomeItemsDetailsScreens());
+                            // Navigator.of(context).push(route);
+                          },
+                          child: Text(
+                            "See All",
+                            style: TextStyle(color: Colors.deepPurple),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: itemsList2(),
+                  ), // Items List Container
+
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10.0, top: 20.0),
+                          child: Text(
+                            "Search by brand",
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.0, right: 20.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            print('object');
+                            // var route = MaterialPageRoute(
+                            //     builder: (context) => HomeItemsDetailsScreens());
+                            // Navigator.of(context).push(route);
+                          },
+                          child: Text(
+                            "See All",
+                            style: TextStyle(color: Colors.deepPurple),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: itemsList3(),
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10.0, top: 20.0),
+                          child: Text(
+                            "Search by brand",
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.0, right: 20.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            print('object');
+                            // var route = MaterialPageRoute(
+                            //     builder: (context) => HomeItemsDetailsScreens());
+                            // Navigator.of(context).push(route);
+                          },
+                          child: Text(
+                            "See All",
+                            style: TextStyle(color: Colors.deepPurple),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: itemsList4(),
                   ),
                 ],
               ),
-              Container(
-                child: itemsList(),
-              ), // Items List Container
-
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 10.0, top: 20.0),
-                      child: Text(
-                        "Featured products",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 20.0, right: 20.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        print('2');
-                        // var route = MaterialPageRoute(
-                        //     builder: (context) => HomeItemsDetailsScreens());
-                        // Navigator.of(context).push(route);
-                      },
-                      child: Text(
-                        "See All",
-                        style: TextStyle(color: Colors.deepPurple),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                child: itemsList2(),
-              ), // Items List Container
-
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 10.0, top: 20.0),
-                      child: Text(
-                        "Search by brand",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 20.0, right: 20.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        print('object');
-                        // var route = MaterialPageRoute(
-                        //     builder: (context) => HomeItemsDetailsScreens());
-                        // Navigator.of(context).push(route);
-                      },
-                      child: Text(
-                        "See All",
-                        style: TextStyle(color: Colors.deepPurple),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                child: itemsList3(),
-              ) // Items List Container
-            ],
-          ),
-        ), // Main/Parent List View
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 30.0,
-              color: Colors.black,
             ),
-            label: ' ',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.widgets_outlined,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.local_mall_outlined,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.bookmark_outline,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: '',
           ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
     );
   }
@@ -287,9 +260,119 @@ class _MainPageState extends State<MainPage> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          items("image/Rectangle85.png", "Thank God Bowl", "€1750"),
-          items("image/Rectangle86.png", "€1750", "Thank God Bowl"),
-          items("image/Rectangle87.png", "€1750", "Thank God Bowl"),
+          Row(
+            children: [
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return GodBowl();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle85.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Thank God Bowl',
+                  ),
+                  Text(
+                    '€1750',
+                  ),
+                ],
+              ),
+
+              //Kavuk
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return KavukVase();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle86.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Kavuk Vase',
+                  ),
+                  Text(
+                    '€4250',
+                  ),
+                ],
+              ),
+
+              //Rumili
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Rumili();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle87.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Rumili Kase',
+                  ),
+                  Text(
+                    '€2350',
+                  ),
+                ],
+              ),
+            ],
+          ),
         ],
       ), // Child ListView
     );
@@ -301,9 +384,123 @@ class _MainPageState extends State<MainPage> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          items("image/SoteriaVazo.png", "Thank God Bowl", "€1750"),
-          items("image/Rectangle89.png", "Item Price", "Item Desc "),
-          items("image/Rectangle86.png", "Item Price", "Item Desc "),
+          Row(
+            children: [
+              //Hagia Sophia Deesis
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Hagia();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/SoteriaVazo.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Hagia Sophia Deesis',
+                  ),
+                  Text(
+                    '€3450',
+                  ),
+                ],
+              ),
+
+              //Kavuk Vase
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return KavukVase();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle86.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Kavuk Vase',
+                  ),
+                  Text(
+                    '€4250',
+                  ),
+                ],
+              ),
+
+              //Soteria Vase
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Sotraia();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle89.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Soteria Vase',
+                  ),
+                  Text(
+                    '€1750',
+                  ),
+                ],
+              ),
+            ],
+          )
+          // items("image/SoteriaVazo.png", "Thank God Bowl", "€1750"),
+          // items("image/Rectangle89.png", "Item Price", "Item Desc "),
+          // items("image/Rectangle86.png", "Item Price", "Item Desc "),
         ],
       ), // Child ListView
     );
@@ -316,9 +513,130 @@ class _MainPageState extends State<MainPage> {
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: <Widget>[
-            items("image/MysticalVase.png", "€1750", "Thank God Bowl"),
-            items("image/Rectangle90.png", "Item Price", "Item Desc "),
-            items("image/Gulcehre_ibrik2.png", "Item Price", "Item Desc "),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    //Mystical Vase
+                    Column(
+                      children: <Widget>[
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return Mystical();
+                                },
+                              ),
+                            );
+                          },
+                          child: Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Image.asset(
+                                'image/MysticalVase.png',
+                                width: 160.0,
+                                height: 160.0,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 30.0,
+                          height: 20.0,
+                        ),
+                        Text(
+                          'Mystical Vase',
+                        ),
+                        Text(
+                          '€3150',
+                        ),
+                      ],
+                    ),
+
+                    //Mystical Vase
+                    Column(
+                      children: <Widget>[
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return R90();
+                                },
+                              ),
+                            );
+                          },
+                          child: Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Image.asset(
+                                'image/Rectangle90.png',
+                                width: 160.0,
+                                height: 160.0,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 30.0,
+                          height: 20.0,
+                        ),
+                        Text(
+                          'Mystical Vase',
+                        ),
+                        Text(
+                          '€4850',
+                        ),
+                      ],
+                    ),
+
+                    //Gulcehre Ibrik
+                    Column(
+                      children: <Widget>[
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return GodBowl();
+                                },
+                              ),
+                            );
+                          },
+                          child: Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Image.asset(
+                                'image/Gulcehre_ibrik2.png',
+                                width: 160.0,
+                                height: 160.0,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 30.0,
+                          height: 20.0,
+                        ),
+                        Text(
+                          'Thank God Bowl',
+                        ),
+                        Text(
+                          '€1750',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[],
+                )
+              ],
+            )
+            // items("image/MysticalVase.png", "€1750", "Thank God Bowl"),
+            // items2("image/Rectangle90.png", "Item Price", "Item Desc "),
+            // items("image/Gulcehre_ibrik2.png", "Item Price", "Item Desc "),
           ],
         ),
       ), // Child ListView
@@ -329,20 +647,174 @@ class _MainPageState extends State<MainPage> {
     return new Container(
       height: 250.0,
       child: Container(
-        child: Center(
-            child: FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return Hagia();
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            Row(
+              children: [
+                //Mystical Vase
+                Column(
+                  children: <Widget>[
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return GodBowl();
+                            },
+                          ),
+                        );
                       },
+                      child: Container(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: Image.asset(
+                            'image/MysticalVase.png',
+                            width: 160.0,
+                            height: 160.0,
+                          ),
+                        ),
+                      ),
                     ),
-                  );
-                },
-                child: Image.asset('image/'))),
+                    SizedBox(
+                      width: 30.0,
+                      height: 20.0,
+                    ),
+                    Text(
+                      'Thank God Bowl',
+                    ),
+                    Text(
+                      '€1750',
+                    ),
+                  ],
+                ),
+
+                //Mystical Vase
+                Column(
+                  children: <Widget>[
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return GodBowl();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: Image.asset(
+                            'image/Rectangle90.png',
+                            width: 160.0,
+                            height: 160.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 30.0,
+                      height: 20.0,
+                    ),
+                    Text(
+                      'Thank God Bowl',
+                    ),
+                    Text(
+                      '€1750',
+                    ),
+                  ],
+                ),
+
+                //Gulcehre Ibrik
+                Column(
+                  children: <Widget>[
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return GodBowl();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: Image.asset(
+                            'image/Gulcehre_ibrik2.png',
+                            width: 160.0,
+                            height: 160.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 30.0,
+                      height: 20.0,
+                    ),
+                    Text(
+                      'Thank God Bowl',
+                    ),
+                    Text(
+                      '€1750',
+                    ),
+                  ],
+                ),
+              ],
+            )
+            // items("image/MysticalVase.png", "€1750", "Thank God Bowl"),
+            // items2("image/Rectangle90.png", "Item Price", "Item Desc "),
+            // items("image/Gulcehre_ibrik2.png", "Item Price", "Item Desc "),
+          ],
+        ),
       ), // Child ListView
+    );
+  }
+
+  Container items2(String imgSrc, String title, String subTitle) {
+    AssetImage image = new AssetImage(imgSrc);
+    return new Container(
+      padding: EdgeInsets.all(10.0),
+      child: SizedBox(
+        width: 130.0,
+        child: Wrap(
+          children: <Widget>[
+            Image(image: image),
+            ListTile(
+              onTap: () {
+                print('Click');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProductDetail(),
+                  ),
+                );
+                // Navigator.push(this.context, MaterialPageRoute(builder: (context) => ItemDetailsScreen()));
+              },
+              title: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              subtitle: Text(
+                subTitle,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 
@@ -358,6 +830,12 @@ class _MainPageState extends State<MainPage> {
             ListTile(
               onTap: () {
                 print('Click');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProductDetail(),
+                  ),
+                );
                 // Navigator.push(this.context, MaterialPageRoute(builder: (context) => ItemDetailsScreen()));
               },
               title: Text(
@@ -396,105 +874,6 @@ class _MainPageState extends State<MainPage> {
           ),
         ));
   }
-
-  Container bottomBarrTap() {
-    return Container(
-      child: Column(
-        children: [
-          new BottomNavigationBar(items: null),
-        ],
-      ),
-    );
-  }
-
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.black,
-//       drawer: showDrawer(),
-//       body: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: <Widget>[
-//           Container(
-//             padding: EdgeInsets.only(
-//                 top: 60.0, left: 0.0, right: 183.0, bottom: 30.0),
-//             child: Row(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: <Widget>[
-//                 // FlatButton(
-//                 //   onPressed: () => {
-//                 //     Navigator.push(
-//                 //       context,
-//                 //       MaterialPageRoute(
-//                 //         builder: (context) {
-//                 //           return Splash2();
-//                 //         },
-//                 //       ),
-//                 //     ),
-//                 //   },
-//                 //   color: Colors.black,
-//                 //   child: Stack(
-//                 //     alignment: Alignment.topLeft,
-//                 //     children: <Widget>[
-//                 //       Icon(
-//                 //         Icons.arrow_back,
-//                 //         color: Colors.white,
-//                 //       ),
-
-//                 //       // Text("back"),
-//                 //     ],
-//                 //   ),
-//                 // ),
-//                 Text(
-//                   'Store',
-//                   textAlign: TextAlign.center,
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontSize: 15.0,
-//                     fontWeight: FontWeight.w700,
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//           Expanded(
-//             child: Container(
-//               padding: EdgeInsets.symmetric(horizontal: 20.0),
-//               decoration: BoxDecoration(
-//                 color: Colors.white,
-//                 borderRadius: BorderRadius.only(
-//                   topLeft: Radius.circular(20.0),
-//                   topRight: Radius.circular(20.0),
-//                 ),
-//               ),
-//               child: Center(
-//                 child: ListView(
-//                   children: <Widget>[
-//                     Row(
-//                       children: <Widget>[
-//                         SizedBox(
-//                           width: 80,
-//                         ),
-//                       ],
-//                     ),
-//                     Column(
-//                       mainAxisAlignment: MainAxisAlignment.center,
-//                       children: <Widget>[
-//                         SizedBox(
-//                           height: 50.0,
-//                         ),
-//                       ],
-//                     )
-//                   ],
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
 
   @override
   Widget build(BuildContext context) {

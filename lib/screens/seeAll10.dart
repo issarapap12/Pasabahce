@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:newflutter/itemdetail/R90.dart';
+import 'package:newflutter/itemdetail/godBowl.dart';
+import 'package:newflutter/itemdetail/kavukvase.dart';
+import 'package:newflutter/itemdetail/mystical.dart';
+import 'package:newflutter/itemdetail/rumiliKase.dart';
+import 'package:newflutter/itemdetail/soteria.dart';
+import 'package:newflutter/screens/hagia.dart';
+import 'package:newflutter/screens/mainPage.dart';
 import 'package:newflutter/screens/seeAll.dart';
 
 class SeeAll10 extends StatefulWidget {
@@ -16,6 +24,273 @@ class _SeeAll10State extends State<SeeAll10> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  Container itemsList() {
+    return new Container(
+      height: 250.0,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          Row(
+            children: [
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Mystical();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/MysticalVase.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Mystical Vase',
+                  ),
+                  Text(
+                    '€3150',
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 30.0,
+              ),
+              //Kavuk
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return R90();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle90.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Mystical Vase',
+                  ),
+                  Text(
+                    '€4850',
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ), // Child ListView
+    );
+  }
+
+  Container itemsList2() {
+    return new Container(
+      height: 250.0,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          Row(
+            children: [
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Hagia();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/SoteriaVazo.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Hagia Sophia Deesis',
+                  ),
+                  Text(
+                    '€3450',
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 30.0,
+              ),
+              //Kavuk
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Rumili();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle87.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Rumili Kase',
+                  ),
+                  Text(
+                    '€2350',
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ), // Child ListView
+    );
+  }
+
+  Container itemsList3() {
+    return new Container(
+      height: 250.0,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          Row(
+            children: [
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return KavukVase();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle86.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Kavuk Vase',
+                  ),
+                  Text(
+                    '€4250',
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 30.0,
+              ),
+              //Kavuk
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Sotraia();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'image/Rectangle89.png',
+                          width: 160.0,
+                          height: 160.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Soteria Vase',
+                  ),
+                  Text(
+                    '€2950',
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ), // Child ListView
+    );
   }
 
   @override
@@ -56,13 +331,22 @@ class _SeeAll10State extends State<SeeAll10> {
                     ],
                   ),
                 ),
+                Text(
+                  '   Leather strap',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ],
             ),
           ),
           Expanded(
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 10.0),
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 5.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -91,60 +375,58 @@ class _SeeAll10State extends State<SeeAll10> {
                         fontSize: 15,
                       ),
                     ),
+
+                    Row(
+                      children: <Widget>[],
+                    ),
+                    Container(
+                      child: itemsList(),
+                    ), // Items List Container
+
+                    Row(
+                      children: <Widget>[],
+                    ),
+                    Container(
+                      child: itemsList2(),
+                    ), // Items List Container
+
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 10.0, top: 20.0),
+                            child: Text(
+                              " ",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.0, right: 20.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              print('object');
+                            },
+                            child: Text(
+                              " ",
+                              style: TextStyle(color: Colors.deepPurple),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      child: itemsList3(),
+                    ),
                   ],
                 ),
               ),
             ),
           ),
-          // BottomNavigationBar(items: null)
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: ' ',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.widgets_outlined,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.local_mall_outlined,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.bookmark,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings,
-              size: 30.0,
-              color: Colors.black,
-            ),
-            label: '',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
     );
   }

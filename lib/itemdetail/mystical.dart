@@ -1,23 +1,23 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter/material.dart';
 
-class Hagia extends StatefulWidget {
+class Mystical extends StatefulWidget {
   @override
-  _HagiaState createState() => _HagiaState();
+  _MysticalState createState() => _MysticalState();
 }
 
-class _HagiaState extends State<Hagia> {
+class _MysticalState extends State<Mystical> {
   Widget showImage() {
     return Container(
       width: 450.0,
       height: 350.0,
-      child: Image.asset('image/SoteriaVazo.png'),
+      child: Image.asset('image/MysticalVase.png'),
     );
   }
 
   Widget showText() {
     return Text(
-      'Hagia Sophia Deesis Mosaic Vase',
+      'Mystical Vase',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 30.0,
@@ -29,7 +29,7 @@ class _HagiaState extends State<Hagia> {
 
   Widget showPrice() {
     return Text(
-      '€3450',
+      '€3150',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 30.0,
@@ -99,7 +99,7 @@ class _HagiaState extends State<Hagia> {
 
   Widget detailPage() {
     return Text(
-      'The Virgin Mary in the “Deesis” scene in the south gallery of Hagia Sophia is depicted on the Hagia Sophia Mosaic Vase.',
+      'After your registration is complete, you can see our opportunity products.',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 15.0,
@@ -151,13 +151,6 @@ class _HagiaState extends State<Hagia> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Row(),
-
-        // automaticallyImplyLeading: false,
-        // elevation: 5.0,
-        // leading: Icon(
-        //   Icons.menu,
-        //   color: Colors.black,
-        // ),
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.only(right: 20.0),

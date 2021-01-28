@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:newflutter/data/constants.dart';
+
 import 'package:newflutter/screens/signIn.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:newflutter/screens/splash2.dart';
-import 'package:newflutter/screens/splashPageLoading.dart';
+
 import 'package:passwordfield/passwordfield.dart';
 
 class Register extends StatefulWidget {

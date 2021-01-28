@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class Hagia extends StatefulWidget {
+class Sotraia extends StatefulWidget {
   @override
-  _HagiaState createState() => _HagiaState();
+  _SotraiaState createState() => _SotraiaState();
 }
 
-class _HagiaState extends State<Hagia> {
+class _SotraiaState extends State<Sotraia> {
   Widget showImage() {
     return Container(
       width: 450.0,
       height: 350.0,
-      child: Image.asset('image/SoteriaVazo.png'),
+      child: Image.asset('image/Rectangle89.png'),
     );
   }
 
   Widget showText() {
     return Text(
-      'Hagia Sophia Deesis Mosaic Vase',
+      'Soteria Vase',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 30.0,
@@ -29,7 +29,7 @@ class _HagiaState extends State<Hagia> {
 
   Widget showPrice() {
     return Text(
-      '€3450',
+      '€2950',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 30.0,

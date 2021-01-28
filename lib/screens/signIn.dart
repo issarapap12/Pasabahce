@@ -1,10 +1,14 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:newflutter/screens/alerts.dart';
 import 'package:newflutter/screens/forgotPassword.dart';
 import 'package:newflutter/screens/mainPage.dart';
+import 'package:newflutter/screens/mainPage2.dart';
 import 'package:newflutter/screens/register.dart';
 import 'package:newflutter/screens/splash2.dart';
+import 'package:newflutter/utils/my_navigator.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -12,6 +16,12 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(seconds: 5), () => MyNavigator.goToIntro(context));
+  }
+
   bool _rememberMe = false;
   Widget userNameText() {
     return TextFormField(
@@ -147,7 +157,7 @@ class _SignInState extends State<SignIn> {
         // print('You Click Sign IN');
 
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return MainPage();
+          return MainPage2();
         }));
       },
     );
@@ -283,6 +293,7 @@ class _SignInState extends State<SignIn> {
             ),
           ),
           Expanded(
+            flex: 1,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(

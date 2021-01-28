@@ -1,23 +1,24 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter/material.dart';
 
-class Hagia extends StatefulWidget {
+class Rumili extends StatefulWidget {
   @override
-  _HagiaState createState() => _HagiaState();
+  _RumiliState createState() => _RumiliState();
 }
 
-class _HagiaState extends State<Hagia> {
+class _RumiliState extends State<Rumili> {
+  @override
   Widget showImage() {
     return Container(
       width: 450.0,
       height: 350.0,
-      child: Image.asset('image/SoteriaVazo.png'),
+      child: Image.asset('image/Rectangle87.png'),
     );
   }
 
   Widget showText() {
     return Text(
-      'Hagia Sophia Deesis Mosaic Vase',
+      'Hagia Sophia Deesis',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 30.0,
@@ -29,7 +30,7 @@ class _HagiaState extends State<Hagia> {
 
   Widget showPrice() {
     return Text(
-      '€3450',
+      '€2350',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 30.0,
@@ -99,7 +100,7 @@ class _HagiaState extends State<Hagia> {
 
   Widget detailPage() {
     return Text(
-      'The Virgin Mary in the “Deesis” scene in the south gallery of Hagia Sophia is depicted on the Hagia Sophia Mosaic Vase.',
+      'After your registration is complete, you can see our opportunity products.',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 15.0,
