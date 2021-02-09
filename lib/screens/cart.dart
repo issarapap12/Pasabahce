@@ -212,6 +212,22 @@ class _CartState extends State<Cart> {
                                         width: 90.0,
                                         height: 90.0,
                                       ),
+                                      SizedBox(
+                                        width: 25.0,
+                                      ),
+                                      Column(
+                                        children: [
+                                          Text('Gulcehre Ibrik'),
+                                          Row(
+                                            children: [
+                                              Text(
+                                                '€5650',
+                                                // textAlign: TextAlign.left,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                   Row(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newflutter/data/constants.dart';
 import 'package:newflutter/screens/loading.dart';
 import 'package:newflutter/screens/mainPage.dart';
 import 'package:newflutter/screens/mainPage2.dart';
@@ -21,6 +22,7 @@ bool _showPassword = false;
 class _RegisterState extends State<Register> {
   String nameString, emailString, passwordString, phoneString;
   final formKey = GlobalKey<FormState>();
+
   Widget registerBtn() {
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -121,7 +123,7 @@ class _RegisterState extends State<Register> {
             print(
               'name = $nameString, email = $emailString , password = $passwordString , phone = $phoneString',
             );
-            registerThread();
+            // registerThread();
           }
           // Navigator.of(context).push(
           //   MaterialPageRoute(
@@ -154,11 +156,58 @@ class _RegisterState extends State<Register> {
     )
         .then((response) {
       print('Register Success');
+      setupName();
     }).catchError((response) {
       String title = response.code;
       String message = response.message;
       print('title = $title,message = $message');
+      myAlert(title, message);
     });
+  }
+
+  Future<void> setupName() async {
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    var user = firebaseAuth.currentUser;
+    if (user != null) {
+      user.updateProfile(displayName: nameString);
+
+      MaterialPageRoute materialPageRoute =
+          MaterialPageRoute(builder: (BuildContext context) => SignIn());
+      Navigator.of(context).pushAndRemoveUntil(
+          materialPageRoute, (Route<dynamic> route) => false);
+    }
+  }
+
+  Widget myAlert(String title, String message) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: ListTile(
+              leading: Icon(
+                Icons.add_alert,
+                color: pasa,
+                size: 48.0,
+              ),
+              title: Text(
+                title,
+                style: TextStyle(color: Colors.red),
+              ),
+            ),
+            content: Text(message),
+            actions: <Widget>[
+              FlatButton(
+                child: Text(
+                  'OK',
+                  style: TextStyle(color: pasa),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
   }
 
   Widget nameText() {

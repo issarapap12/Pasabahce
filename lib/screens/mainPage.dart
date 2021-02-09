@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:newflutter/itemdetail/R90.dart';
 import 'package:newflutter/itemdetail/godBowl.dart';
@@ -16,7 +18,9 @@ import 'package:newflutter/screens/search.dart';
 import 'package:newflutter/screens/seeAll.dart';
 import 'package:newflutter/screens/seeAll10.dart';
 import 'package:newflutter/screens/setting.dart';
+import 'package:newflutter/screens/splash2.dart';
 import 'package:newflutter/screens/verification.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MainPage extends StatefulWidget {
   // MainPage(Key key) : super(key: key);
@@ -436,6 +440,61 @@ class _MainPageState extends State<MainPage> {
       ), // Child ListView
     );
   }
+
+  // Widget signOutButton() {
+  //   return IconButton(
+  //     icon: Icon(Icons.exit_to_app),
+  //     tooltip: 'Sign Out',
+  //     onPressed: () {
+  //       // myAlert();
+  //     },
+  //   );
+  // }
+
+  // void myAlert() {
+  //   showDialog(
+  //       context: context,
+  //       builder: (BuildContext context) {
+  //         return AlertDialog(
+  //           title: Text('Are You Sure ?'),
+  //           content: Text('Do you want Sign Out?'),
+  //           actions: <Widget>[
+  //             cancelButton(),
+  //             okButton(),
+  //           ],
+  //         );
+  //       });
+  // }
+
+  // Future<void> processSignOut() async {
+  //   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  //   await firebaseAuth.signOut().then((response) {
+  //     MaterialPageRoute materialPageRoute =
+  //         MaterialPageRoute(builder: (BuildContext context) => Splash2());
+
+  //     Navigator.of(context).pushAndRemoveUntil(
+  //         materialPageRoute, (Route<dynamic> route) => false);
+  //   });
+  // }
+
+  // Widget cancelButton() {
+  //   return FlatButton(
+  //     onPressed: () {
+  //       Navigator.of(context).pop();
+  //     },
+  //     child: Text('Cancel'),
+  //   );
+  // }
+
+  // Widget okButton() {
+  //   return FlatButton(
+  //     onPressed: () {
+  //       Navigator.of(context).pop();
+  //       processSignOut();
+  //     },
+  //     child: Text('ok'),
+  //   );
+  // }
 
   Container itemsList4() {
     return new Container(
@@ -1063,7 +1122,9 @@ class _MainPageState extends State<MainPage> {
           ],
         ),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+          // child: signOutButton(),
+          ),
     );
   }
 }

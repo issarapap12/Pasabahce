@@ -12,6 +12,7 @@ Color gradientStartColor = Color(0xFF0050AC);
 Color gradientEndColor = Color(0xFF9354B9);
 Color pasa = Color.fromRGBO(204, 157, 118, 3);
 Color superPasa = Color.fromRGBO(204, 157, 118, 8);
+Color splashColor = Color.fromRGBO(215, 163, 36, 5);
 
 Widget showImage() {
   return Container(

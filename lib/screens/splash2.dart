@@ -1,10 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
 import 'package:intro_views_flutter/intro_views_flutter.dart';
+import 'package:newflutter/data/constants.dart';
+import 'package:newflutter/screens/mainPage2.dart';
 import 'package:newflutter/screens/register.dart';
 import 'package:newflutter/screens/signIn.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Splash2 extends StatefulWidget {
   @override
@@ -24,28 +28,40 @@ class _Splash2State extends State<Splash2> {
       });
     });
     super.initState();
+    checkStatus();
+  }
+
+  Future<void> checkStatus() async {
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    var user = firebaseAuth.currentUser;
+    if (user != null) {
+      MaterialPageRoute materialPageRoute =
+          MaterialPageRoute(builder: (BuildContext context) => MainPage2());
+      Navigator.of(context).pushAndRemoveUntil(
+          materialPageRoute, (Route<dynamic> route) => false);
+    }
   }
 
   Widget showImage() {
     return Container(
-      width: 500.0,
-      height: 400.0,
+      width: 1.sh / 2,
+      height: 1.sh / 2,
       child: Image.asset('image/Gulcehre_ibrik2.png'),
     );
   }
 
   Widget showImage2() {
     return Container(
-      width: 500.0,
-      height: 400.0,
+      width: 1.sh / 2,
+      height: 1.sh / 2,
       child: Image.asset('image/SoteriaVazo.png'),
     );
   }
 
   Widget showImage3() {
     return Container(
-      width: 500.0,
-      height: 400.0,
+      width: 1.sh / 2,
+      height: 1.sh / 2,
       child: Image.asset('image/MysticalVase.png'),
     );
   }
@@ -55,7 +71,7 @@ class _Splash2State extends State<Splash2> {
       '€3450',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 16.0,
+        fontSize: 20.0.w,
         color: Colors.white,
       ),
     );
@@ -66,7 +82,7 @@ class _Splash2State extends State<Splash2> {
       '€5650',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 16.0,
+        fontSize: 20.w,
         color: Colors.white,
       ),
     );
@@ -77,7 +93,7 @@ class _Splash2State extends State<Splash2> {
       '€3150',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 16.0,
+        fontSize: 20.w,
         color: Colors.white,
       ),
     );
@@ -140,7 +156,7 @@ class _Splash2State extends State<Splash2> {
       'Hıstory Culture glass',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 10.0,
+        fontSize: 13.0.w,
         color: Colors.grey,
       ),
     );
@@ -151,7 +167,7 @@ class _Splash2State extends State<Splash2> {
       'Hagia Sophia Deesis Mosaic Vase',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 30.0,
+        fontSize: 40.w,
         color: Colors.white,
       ),
     );
@@ -162,7 +178,7 @@ class _Splash2State extends State<Splash2> {
       'Mystical Vase Limited Edition',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 30.0,
+        fontSize: 40.w,
         color: Colors.white,
       ),
     );
@@ -170,18 +186,18 @@ class _Splash2State extends State<Splash2> {
 
   Widget display() {
     return RaisedButton(
-      color: Color(0xFFD6A578),
+      color: splashColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0),
         side: BorderSide(
-          color: Color(0xFFD6A578),
+          color: splashColor,
         ),
       ),
       child: Text(
         '               master Button               ',
         style: TextStyle(
           color: Colors.white,
-          fontSize: 16.0,
+          fontSize: 15.0.w,
         ),
       ),
       onPressed: () {
@@ -192,7 +208,7 @@ class _Splash2State extends State<Splash2> {
 
   Widget display3() {
     return RaisedButton(
-      color: Color(0xFFD6A578),
+      color: splashColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0),
         side: BorderSide(
@@ -203,7 +219,7 @@ class _Splash2State extends State<Splash2> {
         '               Creatıve account               ',
         style: TextStyle(
           color: Colors.white,
-          fontSize: 16.0,
+          fontSize: 15.w,
         ),
       ),
       onPressed: () {
@@ -221,14 +237,14 @@ class _Splash2State extends State<Splash2> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0),
         side: BorderSide(
-          color: Color(0xFFD6A578),
+          color: splashColor,
         ),
       ),
       child: Text(
         '                      Sign In                     ',
         style: TextStyle(
           color: Colors.white,
-          fontSize: 16.0,
+          fontSize: 15.w,
         ),
       ),
       onPressed: () {

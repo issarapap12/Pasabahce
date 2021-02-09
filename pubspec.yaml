@@ -60,6 +60,7 @@ dependencies:
         url: git://github.com/tinylife-io/flutter_verification_code_input.git
   firebase_core: ^0.7.0  
   firebase_auth: ^0.20.0+1
+  flutter_screenutil: ^4.0.3+1
 
   
 
