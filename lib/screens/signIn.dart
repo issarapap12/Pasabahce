@@ -2,13 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:newflutter/data/constants.dart';
 import 'package:newflutter/screens/alerts.dart';
 import 'package:newflutter/screens/forgotPassword.dart';
+import 'package:newflutter/screens/loadingToMainPage.dart';
 import 'package:newflutter/screens/mainPage.dart';
 import 'package:newflutter/screens/mainPage2.dart';
 import 'package:newflutter/screens/register.dart';
 import 'package:newflutter/screens/splash2.dart';
 import 'package:newflutter/utils/my_navigator.dart';
+import 'package:passwordfield/passwordfield.dart';
+import 'loading.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -33,10 +37,11 @@ class _SignInState extends State<SignIn> {
   }
 
   Widget passwordText() {
-    return TextFormField(
-      decoration: InputDecoration(
-        labelText: 'Password',
-        labelStyle: TextStyle(color: Colors.black54),
+    return PasswordField(
+      color: Colors.black,
+      hasFloatingPlaceholder: true,
+      suffixIcon: Icon(
+        Icons.remove_red_eye,
       ),
     );
   }
@@ -105,61 +110,84 @@ class _SignInState extends State<SignIn> {
   }
 
   Widget displayGoogle() {
-    return RaisedButton(
-      color: Colors.yellow.shade800,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
-          color: Colors.yellow.shade900,
+    return Container(
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return MainPage();
+              },
+            ),
+          );
+        },
+        child: Container(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: Image.asset(
+              'image/googleButton.png',
+              width: 240.0,
+              height: 44.0,
+            ),
+          ),
         ),
-      ),
-      child: SignInButton(
-        Buttons.Google,
-        text: "Sign in with Google",
-        onPressed: () {},
       ),
     );
   }
 
   Widget displayFacebook() {
-    return RaisedButton(
-        color: Colors.yellow.shade800,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-          side: BorderSide(
-            color: Colors.yellow.shade900,
+    return Container(
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return MainPage();
+              },
+            ),
+          );
+        },
+        child: Container(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: Image.asset(
+              'image/facebookButton.png',
+              width: 240.0,
+              height: 44.0,
+            ),
           ),
         ),
-        child: SignInButton(
-          Buttons.Facebook,
-          text: "Sign in with Facebook",
-          onPressed: () {},
-        ));
+      ),
+    );
   }
 
   Widget display3() {
-    return RaisedButton(
-      color: Color(0xFFD6A578),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
-          color: Colors.yellow.shade900,
+    return ButtonTheme(
+      minWidth: 240.0,
+      height: 44.0,
+      child: RaisedButton(
+        color: pasa,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+          side: BorderSide(
+            color: pasa,
+          ),
         ),
-      ),
-      child: Text(
-        '               Sign IN               ',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16.0,
+        child: Text(
+          '               Sign IN               ',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16.0,
+          ),
         ),
-      ),
-      onPressed: () {
-        // print('You Click Sign IN');
+        onPressed: () {
+          // print('You Click Sign IN');
 
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return MainPage2();
-        }));
-      },
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return LoadingToMainPage();
+          }));
+        },
+      ),
     );
   }
 
@@ -314,7 +342,7 @@ class _SignInState extends State<SignIn> {
                       children: <Widget>[
                         _buildRememberMeCheckbox(),
                         SizedBox(
-                          width: 80,
+                          width: 80.0,
                         ),
                         forgetPassword(),
                       ],
@@ -327,7 +355,13 @@ class _SignInState extends State<SignIn> {
                           height: 50.0,
                         ),
                         googleBtn(),
+                        SizedBox(
+                          height: 20.0,
+                        ),
                         facebookBtn(),
+                        SizedBox(
+                          height: 20.0,
+                        ),
                         bottomPage(),
                       ],
                     )

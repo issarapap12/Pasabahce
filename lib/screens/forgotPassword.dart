@@ -77,7 +77,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return Loading();
+                return CheckEmail();
               },
             ),
           );

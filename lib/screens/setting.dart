@@ -7,6 +7,7 @@ import 'package:newflutter/setting/myAddresses.dart';
 import 'package:newflutter/setting/myCard.dart';
 import 'package:newflutter/setting/nearbyStores.dart';
 import 'package:newflutter/setting/orderHistory.dart';
+import 'package:newflutter/setting/settingsIn.dart';
 import 'package:newflutter/setting/vouchers.dart';
 
 class Setting extends StatefulWidget {
@@ -149,10 +150,15 @@ class _SettingState extends State<Setting> {
                               Navigator.of(context).push(route);
                             },
                           ),
-                          // SizedBox(
-                          //   height: 1.0,
-
-                          // ),
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 15.0,
+                              right: 15.0,
+                            ),
+                            child: Divider(
+                              color: Colors.black26,
+                            ),
+                          ),
                           ListTile(
                             // leading: Icon(Icons.navigate_next),
                             title: Text("My Addresses"),
@@ -162,6 +168,15 @@ class _SettingState extends State<Setting> {
                                   builder: (context) => MyAddress());
                               Navigator.of(context).push(route);
                             },
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 15.0,
+                              right: 15.0,
+                            ),
+                            child: Divider(
+                              color: Colors.black26,
+                            ),
                           ),
                           ListTile(
                             // leading: Icon(Icons.navigate_next),
@@ -173,6 +188,15 @@ class _SettingState extends State<Setting> {
                               Navigator.of(context).push(route);
                             },
                           ),
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 15.0,
+                              right: 15.0,
+                            ),
+                            child: Divider(
+                              color: Colors.black26,
+                            ),
+                          ),
                           ListTile(
                             // leading: Icon(Icons.navigate_next),
                             title: Text("Vouchers"),
@@ -182,6 +206,15 @@ class _SettingState extends State<Setting> {
                                   builder: (context) => Vouchers());
                               Navigator.of(context).push(route);
                             },
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 15.0,
+                              right: 15.0,
+                            ),
+                            child: Divider(
+                              color: Colors.black26,
+                            ),
                           ),
                           ListTile(
                             // leading: Icon(Icons.navigate_next),
@@ -193,6 +226,15 @@ class _SettingState extends State<Setting> {
                               Navigator.of(context).push(route);
                             },
                           ),
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 15.0,
+                              right: 15.0,
+                            ),
+                            child: Divider(
+                              color: Colors.black26,
+                            ),
+                          ),
                           ListTile(
                             // leading: Icon(Icons.navigate_next),
                             title: Text("Latest Articles"),
@@ -203,13 +245,22 @@ class _SettingState extends State<Setting> {
                               Navigator.of(context).push(route);
                             },
                           ),
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 15.0,
+                              right: 15.0,
+                            ),
+                            child: Divider(
+                              color: Colors.black26,
+                            ),
+                          ),
                           ListTile(
                             // leading: Icon(Icons.navigate_next),
                             title: Text("Settings"),
                             trailing: Icon(Icons.keyboard_arrow_right),
                             onTap: () {
                               var route = MaterialPageRoute(
-                                  builder: (context) => NearbyStores());
+                                  builder: (context) => SettingsIn());
                               Navigator.of(context).push(route);
                             },
                           ),

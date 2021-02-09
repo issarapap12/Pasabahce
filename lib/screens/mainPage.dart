@@ -16,6 +16,7 @@ import 'package:newflutter/screens/search.dart';
 import 'package:newflutter/screens/seeAll.dart';
 import 'package:newflutter/screens/seeAll10.dart';
 import 'package:newflutter/screens/setting.dart';
+import 'package:newflutter/screens/verification.dart';
 
 class MainPage extends StatefulWidget {
   // MainPage(Key key) : super(key: key);
@@ -38,210 +39,6 @@ class _MainPageState extends State<MainPage> {
     return DrawerHeader(
       child: Column(
         children: <Widget>[],
-      ),
-    );
-  }
-
-  Widget initScreen(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 120,
-        flexibleSpace: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
-        ),
-        title: Text(
-          'STORE',
-          textAlign: TextAlign.center,
-        ),
-        backgroundColor: Colors.black,
-        actions: <Widget>[
-          Padding(
-              padding: EdgeInsets.only(right: 20.0),
-              child: IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Search(),
-                      ),
-                    );
-                  })),
-        ],
-      ),
-      drawer: showDrawer(),
-      body: PageView(
-        // controller: _pagecontroller,
-        // onPageChanged: _onPageChange,
-        // physics: NeverScrollableScrollPhysics(),
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10.0),
-            child: Center(
-              child: ListView(
-                children: <Widget>[
-                  Text(
-                    'Ottoman Collection',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),
-                  ),
-                  Text(
-                    'Find the perfect watch for your wrist',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15,
-                    ),
-                  ),
-
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10.0, top: 20.0),
-                          child: Text(
-                            "Categories",
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.0, right: 20.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            print('3');
-                            var route = MaterialPageRoute(
-                                builder: (context) => SeeAll10());
-                            Navigator.of(context).push(route);
-                          },
-                          child: Text(
-                            "See All",
-                            style: TextStyle(color: Colors.deepPurple),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    child: itemsList(),
-                  ), // Items List Container
-
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10.0, top: 20.0),
-                          child: Text(
-                            "Featured products",
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.0, right: 20.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            print('2');
-                            // var route = MaterialPageRoute(
-                            //     builder: (context) => HomeItemsDetailsScreens());
-                            // Navigator.of(context).push(route);
-                          },
-                          child: Text(
-                            "See All",
-                            style: TextStyle(color: Colors.deepPurple),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    child: itemsList2(),
-                  ), // Items List Container
-
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10.0, top: 20.0),
-                          child: Text(
-                            "Search by brand",
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.0, right: 20.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            print('object');
-                            // var route = MaterialPageRoute(
-                            //     builder: (context) => HomeItemsDetailsScreens());
-                            // Navigator.of(context).push(route);
-                          },
-                          child: Text(
-                            "See All",
-                            style: TextStyle(color: Colors.deepPurple),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    child: itemsList3(),
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10.0, top: 20.0),
-                          child: Text(
-                            "Search by brand",
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.0, right: 20.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            print('object');
-                            // var route = MaterialPageRoute(
-                            //     builder: (context) => HomeItemsDetailsScreens());
-                            // Navigator.of(context).push(route);
-                          },
-                          child: Text(
-                            "See All",
-                            style: TextStyle(color: Colors.deepPurple),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    child: itemsList4(),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }
@@ -629,9 +426,6 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ],
                 ),
-                Row(
-                  children: <Widget>[],
-                )
               ],
             )
             // items("image/MysticalVase.png", "€1750", "Thank God Bowl"),
@@ -773,6 +567,180 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
+  Container itemsList5() {
+    return new Container(
+      height: 220.0,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          SizedBox(
+            width: 25.0,
+            height: 10.0,
+          ),
+          Row(
+            children: [
+              Column(
+                children: <Widget>[
+                  Stack(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          right: 0.0,
+                          top: 20.0,
+                          left: 0.0,
+                        ),
+                        child: Container(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return GodBowl();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              child: ClipRRect(
+                                child: Image.asset(
+                                  'image/Rectangle.png',
+                                  width: 315.0,
+                                  height: 160.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          right: 0.0,
+                          // top: 1.0,
+                          left: 100.0,
+                          // bottom: 220.0,
+                        ),
+                        child: Container(
+                          child: Image.asset(
+                            'image/Gulcehre_ibrik2.png',
+                            width: 220,
+                            height: 220,
+                          ),
+                        ),
+                      ),
+                      //   ),
+                      // ),
+                      Positioned(
+                        bottom: 120.0,
+                        right: 180.0,
+                        // left: 120.0,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Column(
+                            children: [
+                              Text(
+                                'Gulcehre Ibrik',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  // fontFamily: 'Avenir-Book.otf',
+                                ),
+                              ),
+                              Text('W:32cm H:26cm'),
+                              Text('€5650'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              // ],
+              // ),
+              SizedBox(
+                width: 20.0,
+              ),
+              //Kavuk
+              Column(
+                children: <Widget>[
+                  Stack(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          right: 0.0,
+                          top: 20.0,
+                          left: 0.0,
+                        ),
+                        child: Container(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return GodBowl();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              child: ClipRRect(
+                                child: Image.asset(
+                                  'image/Rectangle.png',
+                                  width: 315.0,
+                                  height: 160.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          right: 0.0,
+                          // top: 1.0,
+                          left: 100.0,
+                          // bottom: 220.0,
+                        ),
+                        child: Container(
+                          child: Image.asset(
+                            'image/Gulcehre_ibrik2.png',
+                            width: 220,
+                            height: 220,
+                          ),
+                        ),
+                      ),
+                      //   ),
+                      // ),
+                      Positioned(
+                        bottom: 120.0,
+                        right: 180.0,
+                        // left: 120.0,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Column(
+                            children: [
+                              Text('Gulcehre Ibrik'),
+                              Text('W:32cm H:26cm'),
+                              Text('€5650'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 20.0,
+              ),
+            ],
+          ),
+        ],
+      ), // Child ListView
+    );
+  }
+
   Container items2(String imgSrc, String title, String subTitle) {
     AssetImage image = new AssetImage(imgSrc);
     return new Container(
@@ -785,12 +753,12 @@ class _MainPageState extends State<MainPage> {
             ListTile(
               onTap: () {
                 print('Click');
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProductDetail(),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => ProductDetail(),
+                //   ),
+                // );
                 // Navigator.push(this.context, MaterialPageRoute(builder: (context) => ItemDetailsScreen()));
               },
               title: Text(
@@ -830,12 +798,12 @@ class _MainPageState extends State<MainPage> {
             ListTile(
               onTap: () {
                 print('Click');
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProductDetail(),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => ProductDetail(),
+                //   ),
+                // );
                 // Navigator.push(this.context, MaterialPageRoute(builder: (context) => ItemDetailsScreen()));
               },
               title: Text(
@@ -877,6 +845,225 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return initScreen(context);
+    var mediaQuery = MediaQuery.of(context);
+    return Scaffold(
+      body: Container(
+        color: Colors.black,
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              title: Center(
+                child: Text(
+                  'Store',
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              expandedHeight: mediaQuery.size.height / 10,
+              backgroundColor: Colors.black,
+              actions: <Widget>[
+                IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Search(),
+                        ),
+                      );
+                    }),
+              ],
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(9))),
+            ),
+            SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  Container(
+                    height: mediaQuery.size.height,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20.0),
+                        topRight: Radius.circular(20.0),
+                      ),
+                    ),
+                    child: Center(
+                      child: ListView(
+                        children: <Widget>[
+                          Text(
+                            'Ottoman Collection',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30,
+                            ),
+                          ),
+                          Text(
+                            'Find the perfect watch for your wrist',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15,
+                            ),
+                          ),
+
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.only(left: 10.0, top: 20.0),
+                                  child: Text(
+                                    "Categories",
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(top: 20.0, right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    print('3');
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => SeeAll10());
+                                    Navigator.of(context).push(route);
+                                  },
+                                  child: Text(
+                                    "See All >>",
+                                    style: TextStyle(color: Colors.deepPurple),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            child: itemsList(),
+                          ), // Items List Container
+                          SizedBox(
+                            height: 0.0,
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 10.0, top: 20.0, bottom: 20.0),
+                                  child: Text(
+                                    "Categories",
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(top: 20.0, right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    print('3');
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => SeeAll10());
+                                    Navigator.of(context).push(route);
+                                  },
+                                  child: Text(
+                                    "See All >>",
+                                    style: TextStyle(color: Colors.deepPurple),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            child: itemsList5(),
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.only(left: 10.0, top: 20.0),
+                                  child: Text(
+                                    "Featured products",
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(top: 20.0, right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    print('2');
+                                  },
+                                  child: Text(
+                                    "See All >>",
+                                    style: TextStyle(color: Colors.deepPurple),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            child: itemsList2(),
+                          ), // Items List Container
+
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.only(left: 10.0, top: 20.0),
+                                  child: Text(
+                                    "Search by brand",
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(top: 20.0, right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    print('object');
+                                  },
+                                  child: Text(
+                                    "See All >>",
+                                    style: TextStyle(color: Colors.deepPurple),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            child: itemsList3(),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      drawer: Drawer(),
+    );
   }
 }

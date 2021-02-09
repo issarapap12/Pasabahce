@@ -34,28 +34,62 @@ class _SeeAll10State extends State<SeeAll10> {
         children: <Widget>[
           Row(
             children: [
+              SizedBox(
+                width: 30.0,
+              ),
               Column(
                 children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return Mystical();
-                          },
-                        ),
-                      );
-                    },
-                    child: Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset(
-                          'image/MysticalVase.png',
-                          width: 160.0,
-                          height: 160.0,
+                  Stack(
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Mystical();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset(
+                              'image/MysticalVase.png',
+                              width: 150.0,
+                              height: 150.0,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      Positioned(
+                        // bottom: 0.0,
+                        // height: 10.0,
+                        right: 0.0,
+                        left: 100,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/35%.png',
+                            width: 39.0,
+                            height: 24.0,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 5.0,
+                        right: 0.0,
+                        left: 120.0,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/favorite.png',
+                            width: 30.0,
+                            height: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     width: 30.0,
@@ -75,26 +109,57 @@ class _SeeAll10State extends State<SeeAll10> {
               //Kavuk
               Column(
                 children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return R90();
-                          },
-                        ),
-                      );
-                    },
-                    child: Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset(
-                          'image/Rectangle90.png',
-                          width: 160.0,
-                          height: 160.0,
+                  Stack(
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return R90();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset(
+                              'image/Rectangle90.png',
+                              width: 150.0,
+                              height: 150.0,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      Positioned(
+                        // bottom: 0.0,
+                        // height: 10.0,
+                        right: 0.0,
+                        left: 100,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/RepeatGrid8.png',
+                            width: 39.0,
+                            height: 24.0,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 5.0,
+                        right: 0.0,
+                        left: 120.0,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/favorite.png',
+                            width: 30.0,
+                            height: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     width: 30.0,
@@ -123,28 +188,62 @@ class _SeeAll10State extends State<SeeAll10> {
         children: <Widget>[
           Row(
             children: [
+              SizedBox(
+                width: 30.0,
+              ),
               Column(
                 children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return Hagia();
-                          },
-                        ),
-                      );
-                    },
-                    child: Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset(
-                          'image/SoteriaVazo.png',
-                          width: 160.0,
-                          height: 160.0,
+                  Stack(
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Hagia();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset(
+                              'image/SoteriaVazo.png',
+                              width: 150.0,
+                              height: 150.0,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      Positioned(
+                        // bottom: 0.0,
+                        // height: 10.0,
+                        right: 0.0,
+                        left: 100,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/35%.png',
+                            width: 39.0,
+                            height: 24.0,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 5.0,
+                        right: 0.0,
+                        left: 120.0,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/favorite.png',
+                            width: 30.0,
+                            height: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     width: 30.0,
@@ -164,26 +263,43 @@ class _SeeAll10State extends State<SeeAll10> {
               //Kavuk
               Column(
                 children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return Rumili();
-                          },
-                        ),
-                      );
-                    },
-                    child: Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset(
-                          'image/Rectangle87.png',
-                          width: 160.0,
-                          height: 160.0,
+                  Stack(
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Rumili();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset(
+                              'image/Rectangle87.png',
+                              width: 150.0,
+                              height: 150.0,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      Positioned(
+                        bottom: 5.0,
+                        right: 0.0,
+                        left: 120.0,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/favorite.png',
+                            width: 30.0,
+                            height: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     width: 30.0,
@@ -212,28 +328,48 @@ class _SeeAll10State extends State<SeeAll10> {
         children: <Widget>[
           Row(
             children: [
+              SizedBox(
+                width: 30.0,
+              ),
               Column(
                 children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return KavukVase();
-                          },
-                        ),
-                      );
-                    },
-                    child: Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset(
-                          'image/Rectangle86.png',
-                          width: 160.0,
-                          height: 160.0,
+                  Stack(
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return KavukVase();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset(
+                              'image/Rectangle86.png',
+                              width: 150.0,
+                              height: 150.0,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      Positioned(
+                        bottom: 5.0,
+                        right: 0.0,
+                        left: 120.0,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/favorite.png',
+                            width: 30.0,
+                            height: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     width: 30.0,
@@ -253,26 +389,57 @@ class _SeeAll10State extends State<SeeAll10> {
               //Kavuk
               Column(
                 children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return Sotraia();
-                          },
-                        ),
-                      );
-                    },
-                    child: Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset(
-                          'image/Rectangle89.png',
-                          width: 160.0,
-                          height: 160.0,
+                  Stack(
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Sotraia();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset(
+                              'image/Rectangle89.png',
+                              width: 150.0,
+                              height: 150.0,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      Positioned(
+                        // bottom: 0.0,
+                        // height: 10.0,
+                        right: 0.0,
+                        left: 100,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/RepeatGrid8.png',
+                            width: 39.0,
+                            height: 24.0,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 5.0,
+                        right: 0.0,
+                        left: 120.0,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            'image/favorite.png',
+                            width: 30.0,
+                            height: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     width: 30.0,
@@ -345,7 +512,7 @@ class _SeeAll10State extends State<SeeAll10> {
           ),
           Expanded(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              margin: EdgeInsets.symmetric(horizontal: 5.0),
               padding: EdgeInsets.symmetric(horizontal: 5.0),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -376,48 +543,14 @@ class _SeeAll10State extends State<SeeAll10> {
                       ),
                     ),
 
-                    Row(
-                      children: <Widget>[],
-                    ),
                     Container(
                       child: itemsList(),
                     ), // Items List Container
 
-                    Row(
-                      children: <Widget>[],
-                    ),
                     Container(
                       child: itemsList2(),
                     ), // Items List Container
 
-                    Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 10.0, top: 20.0),
-                            child: Text(
-                              " ",
-                              style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.0, right: 20.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              print('object');
-                            },
-                            child: Text(
-                              " ",
-                              style: TextStyle(color: Colors.deepPurple),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                     Container(
                       child: itemsList3(),
                     ),

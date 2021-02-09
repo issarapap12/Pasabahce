@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "156854662469",
+    "project_id": "pasabahce-ab1b4",
+    "storage_bucket": "pasabahce-ab1b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156854662469:android:8fff723f834cc14160fa2c",
+        "android_client_info": {
+          "package_name": "com.example.newflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156854662469-ofrhcle0jk09b1mum9j2evsqad3v7ako.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxhJjhFnLwygPeqrOAVwb4pXGusp_eVhw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156854662469-ofrhcle0jk09b1mum9j2evsqad3v7ako.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "156854662469-vu5tajhj9hpej6blq7lc6rd8vmjbndum.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newflutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

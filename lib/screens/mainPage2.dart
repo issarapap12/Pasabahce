@@ -9,6 +9,7 @@ import 'package:newflutter/screens/hagia.dart';
 import 'package:newflutter/screens/mainPage.dart';
 import 'package:newflutter/screens/menu.dart';
 import 'package:newflutter/screens/seeAll.dart';
+import 'package:newflutter/screens/seeAll10.dart';
 import 'package:newflutter/screens/setting.dart';
 
 class MainPage2 extends StatefulWidget {
@@ -23,6 +24,7 @@ class _MainPage2State extends State<MainPage2> {
   List<Widget> _widgetOptions = <Widget>[
     MainPage(),
     SeeAll(),
+    // SeeAll10(),
     Cart(),
     BookMark(),
     Setting(),
@@ -71,35 +73,35 @@ class _MainPage2State extends State<MainPage2> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
-              color: _selectedIndex == 0 ? Colors.amber : Colors.grey,
+              color: _selectedIndex == 0 ? Colors.amber : Colors.black,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.widgets_outlined,
-              color: _selectedIndex == 1 ? Colors.amber : Colors.grey,
+              color: _selectedIndex == 1 ? Colors.amber : Colors.black,
             ),
             label: " ",
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.local_mall_outlined,
-              color: _selectedIndex == 2 ? Colors.amber : Colors.grey,
+              color: _selectedIndex == 2 ? Colors.amber : Colors.black,
             ),
             label: " ",
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.bookmark_outline,
-              color: _selectedIndex == 3 ? Colors.amber : Colors.grey,
+              color: _selectedIndex == 3 ? Colors.amber : Colors.black,
             ),
             label: " ",
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.settings,
-              color: _selectedIndex == 4 ? Colors.amber : Colors.grey,
+              color: _selectedIndex == 4 ? Colors.amber : Colors.black,
             ),
             label: " ",
           ),
