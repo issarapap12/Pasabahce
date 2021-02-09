@@ -7,8 +7,10 @@ import 'package:newflutter/screens/my_service.dart';
 import 'package:newflutter/screens/setting.dart';
 import 'package:newflutter/screens/splash.dart';
 import 'package:newflutter/screens/splash2.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
