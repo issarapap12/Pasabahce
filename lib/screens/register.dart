@@ -123,15 +123,15 @@ class _RegisterState extends State<Register> {
             print(
               'name = $nameString, email = $emailString , password = $passwordString , phone = $phoneString',
             );
-            // registerThread();
+            registerThread();
           }
-          // Navigator.of(context).push(
-          //   MaterialPageRoute(
-          //     builder: (context) {
-          //       return Loading();
-          //     },
-          //   ),
-          // );
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return Loading();
+              },
+            ),
+          );
         },
         child: Container(
           child: ClipRRect(

@@ -1,14 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_pro/carousel_pro.dart';
-import 'package:intro_slider/intro_slider.dart';
-import 'package:intro_slider/slide_object.dart';
-import 'package:intro_views_flutter/intro_views_flutter.dart';
 import 'package:newflutter/data/constants.dart';
 import 'package:newflutter/screens/mainPage2.dart';
 import 'package:newflutter/screens/register.dart';
 import 'package:newflutter/screens/signIn.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Splash2 extends StatefulWidget {
   @override
@@ -17,29 +14,37 @@ class Splash2 extends StatefulWidget {
 
 class _Splash2State extends State<Splash2> {
   PageController pageController = PageController(initialPage: 0);
-  PageController _pageController = PageController();
+  PageController _pageController = new PageController();
   double currentPage = 0;
 
   @override
   void initState() {
+    super.initState();
+
     _pageController.addListener(() {
       setState(() {
         currentPage = _pageController.page;
       });
     });
-    super.initState();
-    checkStatus();
+    checkStatus().then((value) {
+      if (value)
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => MainPage2()),
+            (Route<dynamic> route) => false);
+    });
   }
 
-  Future<void> checkStatus() async {
+  @override
+  void dispose() {
+    pageController.dispose();
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  Future<bool> checkStatus() async {
     FirebaseAuth firebaseAuth = FirebaseAuth.instance;
     var user = firebaseAuth.currentUser;
-    if (user != null) {
-      MaterialPageRoute materialPageRoute =
-          MaterialPageRoute(builder: (BuildContext context) => MainPage2());
-      Navigator.of(context).pushAndRemoveUntil(
-          materialPageRoute, (Route<dynamic> route) => false);
-    }
+    return user != null;
   }
 
   Widget showImage() {
@@ -71,9 +76,10 @@ class _Splash2State extends State<Splash2> {
       '€3450',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 20.0.w,
-        color: Colors.white,
-      ),
+          fontSize: 20.0.w,
+          color: Colors.white,
+          fontFamily: 'AvenirHeavy',
+          fontWeight: FontWeight.bold),
     );
   }
 
@@ -82,9 +88,10 @@ class _Splash2State extends State<Splash2> {
       '€5650',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 20.w,
-        color: Colors.white,
-      ),
+          fontSize: 20.w,
+          color: Colors.white,
+          fontFamily: 'AvenirHeavy',
+          fontWeight: FontWeight.bold),
     );
   }
 
@@ -93,9 +100,10 @@ class _Splash2State extends State<Splash2> {
       '€3150',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 20.w,
-        color: Colors.white,
-      ),
+          fontSize: 20.w,
+          color: Colors.white,
+          fontFamily: 'Avenir',
+          fontWeight: FontWeight.bold),
     );
   }
 
@@ -153,23 +161,25 @@ class _Splash2State extends State<Splash2> {
 
   Widget showText2() {
     return Text(
-      'Hıstory Culture glass',
+      'HISYORY CULTURE GLASS',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 13.0.w,
-        color: Colors.grey,
-      ),
+          fontSize: 13.0.w,
+          color: Colors.white,
+          fontFamily: 'AvenirBook',
+          fontWeight: FontWeight.normal),
     );
   }
 
   Widget showText3() {
     return Text(
-      'Hagia Sophia Deesis Mosaic Vase',
+      'Hagia Sophia    Deesis Mosaic Vase',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 40.w,
-        color: Colors.white,
-      ),
+          fontSize: 40.w,
+          color: Colors.white,
+          fontFamily: 'AvenirHeavy',
+          fontWeight: FontWeight.bold),
     );
   }
 
@@ -178,81 +188,97 @@ class _Splash2State extends State<Splash2> {
       'Mystical Vase Limited Edition',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 40.w,
-        color: Colors.white,
-      ),
+          fontSize: 40.w,
+          color: Colors.white,
+          fontFamily: 'AvenirHeavy',
+          fontWeight: FontWeight.bold),
     );
   }
 
   Widget display() {
-    return RaisedButton(
-      color: splashColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
-          color: splashColor,
+    return ButtonTheme(
+      minWidth: 244.0.w,
+      height: 44.0.w,
+      child: RaisedButton(
+        color: splashColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0.w),
+          side: BorderSide(
+            color: splashColor,
+          ),
         ),
-      ),
-      child: Text(
-        '               master Button               ',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15.0.w,
+        child: Text(
+          'MASTER BUTTON',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 15.0.w,
+              fontFamily: 'Avenir',
+              fontWeight: FontWeight.bold),
         ),
+        onPressed: () {
+          print('You Click S');
+        },
       ),
-      onPressed: () {
-        print('You Click S');
-      },
     );
   }
 
   Widget display3() {
-    return RaisedButton(
-      color: splashColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
-          color: Color(0xFF5F5D5D),
+    return ButtonTheme(
+      minWidth: 244.0.w,
+      height: 44.0.w,
+      child: RaisedButton(
+        color: splashColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0.w),
+          side: BorderSide(
+            color: pasa,
+          ),
         ),
-      ),
-      child: Text(
-        '               Creatıve account               ',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15.w,
+        child: Text(
+          'CREATIVE ACCOUNT',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 15.w,
+              fontFamily: 'Avenir',
+              fontWeight: FontWeight.bold),
         ),
+        onPressed: () {
+          print('You Click Creative');
+          MaterialPageRoute materialPageRoute =
+              MaterialPageRoute(builder: (BuildContext context) => Register());
+          Navigator.of(context).push(materialPageRoute);
+        },
       ),
-      onPressed: () {
-        print('You Click Creative');
-        MaterialPageRoute materialPageRoute =
-            MaterialPageRoute(builder: (BuildContext context) => Register());
-        Navigator.of(context).push(materialPageRoute);
-      },
     );
   }
 
   Widget display2() {
-    return OutlineButton(
-      borderSide: BorderSide(color: Color(0xFFFFFFFF)),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
-          color: splashColor,
+    return ButtonTheme(
+      height: 44.0.w,
+      minWidth: 244.0.w,
+      child: OutlineButton(
+        borderSide: BorderSide(color: Color(0xFFFFFFFF)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          side: BorderSide(
+            color: splashColor,
+          ),
         ),
-      ),
-      child: Text(
-        '                      Sign In                     ',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15.w,
+        child: Text(
+          'SIGN IN',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 15.w,
+              fontFamily: 'Avenir',
+              fontWeight: FontWeight.bold),
         ),
+        onPressed: () {
+          print('You Click Sign In');
+          MaterialPageRoute materialPageRoute =
+              MaterialPageRoute(builder: (BuildContext context) => SignIn());
+          Navigator.of(context).push(materialPageRoute);
+        },
       ),
-      onPressed: () {
-        print('You Click Sign In');
-        MaterialPageRoute materialPageRoute =
-            MaterialPageRoute(builder: (BuildContext context) => SignIn());
-        Navigator.of(context).push(materialPageRoute);
-      },
     );
   }
 
@@ -261,87 +287,151 @@ class _Splash2State extends State<Splash2> {
       'Gülçehre İbrik Limited Edition',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 30.0,
+        fontSize: 40.0.w,
         color: Colors.white,
         fontWeight: FontWeight.bold,
+        fontFamily: 'Avenir',
       ),
+    );
+  }
+
+  Widget smooth() {
+    return SmoothPageIndicator(
+      controller: _pageController,
+      count: 3,
+      effect: const WormEffect(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Test'),
-      // ),
-      body: PageView(
-        controller: _pageController,
-        pageSnapping: true,
+      body: Stack(
         children: <Widget>[
-          Container(
-            // decoration: BoxDecoration(color: Colors.black),
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  showImage(),
-                  showPrice(),
-                  showText2(),
-                  SizedBox(
-                    height: 10.0,
+          PageView(
+            controller: _pageController,
+            children: <Widget>[
+              Container(
+                // decoration: BoxDecoration(color: Colors.black),
+                child: Center(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 60.0.w,
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          showImage(),
+                          showPrice(),
+                          showText2(),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          showText(),
+                          SizedBox(
+                            height: 80.0,
+                          ),
+                          showButton(),
+                        ],
+                      ),
+                    ],
                   ),
-                  showText(),
-                  SizedBox(
-                    height: 80.0,
-                  ),
-                  showButton(),
-                ],
+                ),
+                color: Colors.black,
               ),
-            ),
-            color: Colors.black,
+              Container(
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 100.0.w,
+                      ),
+                      showText2(),
+                      showText3(),
+                      showPrice2(),
+                      showImage2(),
+                      SizedBox(
+                        height: 20.0.w,
+                      ),
+                      showButton(),
+                    ],
+                  ),
+                ),
+                color: Colors.black,
+              ),
+              Container(
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 50.0.w,
+                      ),
+                      showImage3(),
+                      showPrice3(),
+                      showText2(),
+                      SizedBox(
+                        height: 5.0.w,
+                      ),
+                      showText4(),
+                      SizedBox(
+                        height: 5.0.w,
+                      ),
+                      signInButton(),
+                      SizedBox(
+                        height: 10.0.w,
+                      ),
+                      creativeButton(),
+                    ],
+                  ),
+                ),
+                color: Colors.black,
+              ),
+            ],
           ),
-          Container(
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  showText2(),
-                  showText3(),
-                  showPrice2(),
-                  showImage2(),
-                  SizedBox(
-                    height: 80.0,
-                  ),
-                  showButton(),
-                ],
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height: 25.0.w,
               ),
-            ),
-            color: Colors.black,
-          ),
-          Container(
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  showImage3(),
-                  showPrice3(),
-                  showText2(),
-                  SizedBox(
-                    height: 10.0,
+              Container(
+                padding: const EdgeInsets.all(20),
+                child: Center(
+                    child: SmoothPageIndicator(
+                  controller: _pageController,
+                  count: 3,
+                  effect: ScrollingDotsEffect(
+                    dotHeight: 6.0.w,
+                    dotWidth: 6.0.w,
+                    dotColor: Colors.grey,
+                    activeDotColor: pasa,
+                    spacing: 10.0.w,
+                    radius: 20.0.w,
                   ),
-                  showText4(),
-                  SizedBox(
-                    height: 80.0,
+                  // effect: WormEffect(
+                  //   // spacing: 10.0.w,
+                  //   // radius: 100.0.w,
+                  //   dotWidth: 38.0.w,
+                  //   dotHeight: 6.0.w,
+                  //   // paintStyle: PaintingStyle.fill,
+                  //   // strokeWidth: 70,
+                  //   dotColor: Colors.grey,
+                  //   activeDotColor: pasa,
+                  // ),
+                  onDotClicked: (index) => _pageController.animateToPage(
+                    index,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInCubic,
                   ),
-                  signInButton(),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  creativeButton(),
-                ],
-              ),
-            ),
-            color: Colors.black,
+                )),
+              )
+            ],
           ),
         ],
       ),

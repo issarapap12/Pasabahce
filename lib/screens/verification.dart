@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newflutter/data/constants.dart';
 import 'package:newflutter/screens/mainPage2.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Verification extends StatefulWidget {
   @override
@@ -11,12 +12,12 @@ class _VerificationState extends State<Verification> {
   GlobalKey<ScaffoldState> _key;
   RangeValues values = RangeValues(1, 100);
   bool _isSelected;
-  var selectedRange = RangeValues(0.2, 0.8);
+  var selectedRange = RangeValues(2, 8);
   List<Company> _companies;
   List<String> _filters;
   List<String> _filters2;
   List<Company> _companies2;
-  RangeLabels labels = RangeLabels('0', '100');
+  RangeLabels labels = RangeLabels('€0', '€100');
   // double count = 0.0;
 
   @override
@@ -45,6 +46,83 @@ class _VerificationState extends State<Verification> {
     ];
   }
 
+  Widget applyBtn() {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Row(),
+        SizedBox(
+          width: 2.0,
+        ),
+        display3(),
+      ],
+    );
+  }
+
+  Widget clearBtn() {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Row(),
+        SizedBox(
+          width: 2.0,
+        ),
+        display2(),
+      ],
+    );
+  }
+
+  Widget display3() {
+    return ButtonTheme(
+      minWidth: 240.0.w,
+      height: 44.0.w,
+      child: RaisedButton(
+        color: pasa,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          side: BorderSide(
+            color: pasa,
+          ),
+        ),
+        child: Text(
+          'APPLY',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 15.0.w,
+            fontFamily: 'Avenir',
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        onPressed: () {},
+      ),
+    );
+  }
+
+  Widget display2() {
+    return ButtonTheme(
+      minWidth: 240.0.w,
+      height: 44.0.w,
+      child: RaisedButton(
+        color: lightPasaColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          side: BorderSide(
+            color: lightPasaColor,
+          ),
+        ),
+        child: Text(
+          'CLEAR FILTERS',
+          style: TextStyle(
+              color: Colors.black,
+              fontSize: 15.0.w,
+              fontFamily: 'Avenir',
+              fontWeight: FontWeight.w500),
+        ),
+        onPressed: () {},
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
@@ -58,8 +136,12 @@ class _VerificationState extends State<Verification> {
               automaticallyImplyLeading: false,
               title: Center(
                 child: Text(
-                  '          FILTER & SORT',
-                  style: TextStyle(color: Colors.white),
+                  '           FILTER & SORT',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13.0.w,
+                      fontFamily: 'Avenir',
+                      fontWeight: FontWeight.normal),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -69,12 +151,13 @@ class _VerificationState extends State<Verification> {
                 IconButton(
                     icon: Icon(Icons.clear),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MainPage2(),
-                        ),
-                      );
+                      Navigator.of(context).pop();
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => MainPage2(),
+                      //   ),
+                      // );
                     }),
               ],
               shape: RoundedRectangleBorder(
@@ -117,8 +200,9 @@ class _VerificationState extends State<Verification> {
                               'Select categories',
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0),
+                                  fontSize: 20.0.w,
+                                  fontFamily: 'Avenir',
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -153,8 +237,9 @@ class _VerificationState extends State<Verification> {
                               'Sort watches by',
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0),
+                                  fontSize: 20.0.w,
+                                  fontFamily: 'Avenir',
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -189,8 +274,9 @@ class _VerificationState extends State<Verification> {
                               'Select a price range',
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0),
+                                  fontSize: 20.0.w,
+                                  fontFamily: 'Avenir',
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -198,28 +284,28 @@ class _VerificationState extends State<Verification> {
                           height: 20.0,
                         ),
                         SliderTheme(
-                          data: SliderTheme.of(context).copyWith(
-
-                              // thumbShape: RoundRangeSliderThumbShape(enabledThumbRadius: 15.0),
-                              trackShape: RectangularSliderTrackShape(),
-                              thumbShape: RoundSliderThumbShape(
-                                  enabledThumbRadius: 9.0),
-                              overlayShape:
-                                  RoundSliderOverlayShape(overlayRadius: 30.0),
-                              trackHeight: 3.0,
-                              activeTrackColor: pasa,
-                              rangeThumbShape: RoundRangeSliderThumbShape(),
-                              // rangeValueIndicatorShape:
-                              //     PaddleRangeSliderValueIndicatorShape(),
-                              rangeValueIndicatorShape:
-                                  PaddleRangeSliderValueIndicatorShape(),
-                              thumbColor: Colors.white,
-                              minThumbSeparation: 50.0,
-                              overlayColor: Colors.white,
-                              valueIndicatorColor: Colors.white,
-                              valueIndicatorShape: RoundSliderOverlayShape(),
-                              valueIndicatorTextStyle: TextStyle(
-                                  fontSize: 15.0, color: Colors.black)),
+                          data: SliderThemeData(
+                            // thumbShape: RoundRangeSliderThumbShape(enabledThumbRadius: 15.0),
+                            trackShape: RectangularSliderTrackShape(),
+                            thumbShape:
+                                RoundSliderThumbShape(enabledThumbRadius: 9.0),
+                            overlayShape:
+                                RoundSliderOverlayShape(overlayRadius: 30.0),
+                            trackHeight: 2.0,
+                            activeTrackColor: pasa,
+                            rangeThumbShape: RoundRangeSliderThumbShape(),
+                            // rangeValueIndicatorShape:
+                            //     PaddleRangeSliderValueIndicatorShape(),
+                            // rangeValueIndicatorShape:
+                            //     PaddleRangeSliderValueIndicatorShape(),
+                            thumbColor: pasa,
+                            minThumbSeparation: 50.0,
+                            overlayColor: Colors.black,
+                            valueIndicatorColor: Colors.orange,
+                            valueIndicatorShape: RoundSliderOverlayShape(),
+                            valueIndicatorTextStyle:
+                                TextStyle(fontSize: 15.0, color: Colors.black),
+                          ),
                           child: RangeSlider(
                             values: values,
                             // activeColor: pasa,
@@ -227,18 +313,25 @@ class _VerificationState extends State<Verification> {
                             inactiveColor: Colors.grey[100],
                             divisions: 5,
                             labels: labels,
+
                             onChanged: (value) {
                               setState(() {
                                 values = value;
                                 labels = RangeLabels(
-                                    '${value.start.toInt().toString()}\$',
-                                    '${value.end.toInt().toString()}\$');
+                                  '€${value.start.toInt().toString()}',
+                                  '€${value.end.toInt().toString()}',
+                                );
                               });
                             },
                             min: 1,
                             max: 100,
                           ),
                         ),
+                        applyBtn(),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        clearBtn(),
                       ],
                     ),
                   )
@@ -259,7 +352,7 @@ class _VerificationState extends State<Verification> {
         padding: const EdgeInsets.all(6.0),
         child: FilterChip(
           padding:
-              EdgeInsets.only(left: 12.5, right: 12.5, top: 15.5, bottom: 15.5),
+              EdgeInsets.only(left: 12.5, right: 12.5, top: 12.5, bottom: 12.5),
           showCheckmark: false,
           backgroundColor: Colors.grey[100],
           label: Text(
@@ -267,7 +360,10 @@ class _VerificationState extends State<Verification> {
             style: TextStyle(
                 color: _filters.contains(company.name)
                     ? Colors.white
-                    : Colors.black),
+                    : Colors.black,
+                fontSize: 14.0.w,
+                fontFamily: 'Avenir',
+                fontWeight: FontWeight.normal),
           ),
           selected: _filters.contains(company.name),
           selectedColor: superPasa,
@@ -306,7 +402,10 @@ class _VerificationState extends State<Verification> {
             style: TextStyle(
                 color: _filters2.contains(company.name)
                     ? Colors.white
-                    : Colors.black),
+                    : Colors.black,
+                fontSize: 14.0.w,
+                fontFamily: 'Avenir',
+                fontWeight: FontWeight.normal),
           ),
           selected: _filters2.contains(company.name),
           selectedColor: superPasa,

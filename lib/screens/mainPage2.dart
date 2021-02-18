@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newflutter/data/constants.dart';
 import 'package:newflutter/itemdetail/godBowl.dart';
 import 'package:newflutter/itemdetail/kavukvase.dart';
 import 'package:newflutter/itemdetail/rumiliKase.dart';
@@ -73,35 +74,35 @@ class _MainPage2State extends State<MainPage2> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
-              color: _selectedIndex == 0 ? Colors.amber : Colors.black,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.widgets_outlined,
-              color: _selectedIndex == 1 ? Colors.amber : Colors.black,
+              color: _selectedIndex == 0 ? pasa : Colors.black,
             ),
             label: " ",
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.local_mall_outlined,
-              color: _selectedIndex == 2 ? Colors.amber : Colors.black,
+              Icons.category_outlined,
+              color: _selectedIndex == 1 ? pasa : Colors.black,
+            ),
+            label: " ",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_bag_outlined,
+              color: _selectedIndex == 2 ? pasa : Colors.black,
             ),
             label: " ",
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.bookmark_outline,
-              color: _selectedIndex == 3 ? Colors.amber : Colors.black,
+              color: _selectedIndex == 3 ? pasa : Colors.black,
             ),
             label: " ",
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.settings,
-              color: _selectedIndex == 4 ? Colors.amber : Colors.black,
+              Icons.settings_outlined,
+              color: _selectedIndex == 4 ? pasa : Colors.black,
             ),
             label: " ",
           ),

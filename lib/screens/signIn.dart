@@ -10,9 +10,13 @@ import 'package:newflutter/screens/mainPage.dart';
 import 'package:newflutter/screens/mainPage2.dart';
 import 'package:newflutter/screens/register.dart';
 import 'package:newflutter/screens/splash2.dart';
+import 'package:newflutter/screens/test.dart';
+import 'package:newflutter/screens/testLoading.dart';
 import 'package:newflutter/utils/my_navigator.dart';
 import 'package:passwordfield/passwordfield.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'loading.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -20,6 +24,8 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  final forKey = GlobalKey<FormState>();
+  String emailString, passwordString;
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -29,16 +35,29 @@ class _SignInState extends State<SignIn> {
   bool _rememberMe = false;
   Widget userNameText() {
     return TextFormField(
+      keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         labelText: 'Username or email',
-        labelStyle: TextStyle(color: Colors.black54),
+        labelStyle: TextStyle(
+            fontSize: 13.0.w,
+            color: Colors.black,
+            fontFamily: 'AvenirBook',
+            fontWeight: FontWeight.normal),
       ),
+      onSaved: (String value) {
+        emailString = value.trim();
+      },
     );
   }
 
   Widget passwordText() {
     return PasswordField(
       color: Colors.black,
+      inputStyle: TextStyle(
+          fontSize: 14.w,
+          color: Colors.black,
+          fontFamily: 'Avenir',
+          fontWeight: FontWeight.w500),
       hasFloatingPlaceholder: true,
       suffixIcon: Icon(
         Icons.remove_red_eye,
@@ -51,10 +70,10 @@ class _SignInState extends State<SignIn> {
       'Let’s sign you in',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 30.0,
-        color: Colors.black,
-        fontWeight: FontWeight.bold,
-      ),
+          fontSize: 30.w,
+          color: Colors.black,
+          fontFamily: 'AvenirHeavy',
+          fontWeight: FontWeight.bold),
     );
   }
 
@@ -63,10 +82,10 @@ class _SignInState extends State<SignIn> {
       'Welcome back, you’ve been missed!',
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 15.0,
-        color: Colors.grey,
-        // fontWeight: FontWeight.bold,
-      ),
+          fontSize: 14.w,
+          color: Colors.black,
+          fontFamily: 'Avenir',
+          fontWeight: FontWeight.normal),
     );
   }
 
@@ -126,8 +145,8 @@ class _SignInState extends State<SignIn> {
             borderRadius: BorderRadius.circular(20.0),
             child: Image.asset(
               'image/googleButton.png',
-              width: 240.0,
-              height: 44.0,
+              width: 240.0.w,
+              height: 44.0.w,
             ),
           ),
         ),
@@ -152,8 +171,8 @@ class _SignInState extends State<SignIn> {
             borderRadius: BorderRadius.circular(20.0),
             child: Image.asset(
               'image/facebookButton.png',
-              width: 240.0,
-              height: 44.0,
+              width: 240.0.w,
+              height: 44.0.w,
             ),
           ),
         ),
@@ -161,31 +180,41 @@ class _SignInState extends State<SignIn> {
     );
   }
 
+  Future<void> checkAuthen() async {}
+
   Widget display3() {
     return ButtonTheme(
-      minWidth: 240.0,
-      height: 44.0,
+      minWidth: 240.0.w,
+      height: 44.0.w,
       child: RaisedButton(
         color: pasa,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
+          borderRadius: BorderRadius.circular(25.0),
           side: BorderSide(
             color: pasa,
           ),
         ),
         child: Text(
-          '               Sign IN               ',
+          'Sign IN',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 16.0,
-          ),
+              fontSize: 15.w,
+              color: Colors.white,
+              fontFamily: 'Avenir',
+              fontWeight: FontWeight.w500),
         ),
         onPressed: () {
-          // print('You Click Sign IN');
-
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return LoadingToMainPage();
-          }));
+          forKey.currentState.save();
+          print('email = $emailString');
+          checkAuthen();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Test();
+                // return LoadingToMainPage();
+              },
+            ),
+          );
         },
       ),
     );
@@ -199,8 +228,9 @@ class _SignInState extends State<SignIn> {
           'Don’t have an account?',
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 15.0,
-            color: Colors.grey.shade400,
+            fontSize: 15.0.w,
+            color: shipping,
+            fontFamily: 'Avenir',
             // fontWeight: FontWeight.bold,
           ),
         ),
@@ -221,6 +251,11 @@ class _SignInState extends State<SignIn> {
         padding: EdgeInsets.only(right: 0.0),
         child: Text(
           'Forgot Password?',
+          style: TextStyle(
+              fontSize: 14.w,
+              color: Colors.black,
+              fontFamily: 'Avenir',
+              fontWeight: FontWeight.w500),
         ),
       ),
     );
@@ -238,6 +273,11 @@ class _SignInState extends State<SignIn> {
         padding: EdgeInsets.only(right: 0.0),
         child: Text(
           'Sign Up',
+          style: TextStyle(
+              fontSize: 14.w,
+              color: Colors.black,
+              fontFamily: 'Avenir',
+              fontWeight: FontWeight.normal),
         ),
       ),
     );
@@ -263,11 +303,27 @@ class _SignInState extends State<SignIn> {
           ),
           Text(
             'Remember me',
+            style: TextStyle(
+                fontSize: 14.w,
+                color: Colors.black,
+                fontFamily: 'Avenir',
+                fontWeight: FontWeight.w500),
             // style: kLabelStyle,
           ),
         ],
       ),
     );
+  }
+
+  Widget content() {
+    return Form(
+        key: forKey,
+        child: Column(
+          children: <Widget>[
+            userNameText(),
+            passwordText(),
+          ],
+        ));
   }
 
   @override
@@ -309,13 +365,13 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 Text(
-                  'Log In',
+                  'LOG IN',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w700,
-                  ),
+                      fontSize: 13.w,
+                      color: Colors.white,
+                      fontFamily: 'Avenir',
+                      fontWeight: FontWeight.normal),
                 ),
               ],
             ),
@@ -336,8 +392,7 @@ class _SignInState extends State<SignIn> {
                   children: <Widget>[
                     titlePage(),
                     detailPage(),
-                    userNameText(),
-                    passwordText(),
+                    content(),
                     Row(
                       children: <Widget>[
                         _buildRememberMeCheckbox(),

@@ -4,19 +4,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:newflutter/data/constants.dart';
-import 'package:newflutter/data/progresshud.dart';
-import 'package:newflutter/screens/mainPage2.dart';
+import 'package:newflutter/screens/orderPlaced.dart';
 import 'package:newflutter/screens/signIn.dart';
 import 'package:newflutter/screens/verification.dart';
-import 'package:circle_progress/circle_progress.dart';
-import 'package:load/load.dart';
 
-class LoadingToMainPage extends StatefulWidget {
+class LoadingOrder extends StatefulWidget {
   @override
-  _LoadingToMainPageState createState() => _LoadingToMainPageState();
+  _LoadingOrderState createState() => _LoadingOrderState();
 }
 
-class _LoadingToMainPageState extends State<LoadingToMainPage>
+class _LoadingOrderState extends State<LoadingOrder>
     with SingleTickerProviderStateMixin {
   @override
   void initState() {
@@ -26,7 +23,7 @@ class _LoadingToMainPageState extends State<LoadingToMainPage>
       Duration(seconds: 5),
       () => Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => MainPage2()),
+        MaterialPageRoute(builder: (context) => OrderPlaced()),
       ),
     );
   }

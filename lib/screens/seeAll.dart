@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newflutter/data/constants.dart';
 import 'package:newflutter/itemdetail/godBowl.dart';
 import 'package:newflutter/itemdetail/kavukvase.dart';
 import 'package:newflutter/itemdetail/rumiliKase.dart';
@@ -12,6 +13,7 @@ import 'package:newflutter/screens/sortBar.dart';
 import 'package:newflutter/screens/splash2.dart';
 import 'package:newflutter/screens/test.dart';
 import 'package:newflutter/screens/verification.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SeeAll extends StatefulWidget {
   @override
@@ -59,8 +61,8 @@ class _SeeAllState extends State<SeeAll> {
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image.asset(
                               'image/Rectangle85.png',
-                              width: 150.0,
-                              height: 150.0,
+                              width: 150.0.w,
+                              height: 150.0.w,
                             ),
                           ),
                         ),
@@ -100,9 +102,24 @@ class _SeeAllState extends State<SeeAll> {
                   ),
                   Text(
                     'Thank God Bowl',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0.w,
                   ),
                   Text(
                     '€1750',
+                    style: TextStyle(
+                      fontSize: 20.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -172,9 +189,24 @@ class _SeeAllState extends State<SeeAll> {
                   ),
                   Text(
                     'Kavuk Vase',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0.w,
                   ),
                   Text(
                     '€4250',
+                    style: TextStyle(
+                      fontSize: 20.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -243,9 +275,24 @@ class _SeeAllState extends State<SeeAll> {
                   ),
                   Text(
                     'Rumili Kase',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0.w,
                   ),
                   Text(
                     '€2350',
+                    style: TextStyle(
+                      fontSize: 20.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -325,9 +372,24 @@ class _SeeAllState extends State<SeeAll> {
                   ),
                   Text(
                     'Hagia Sophia Deesis',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0.w,
                   ),
                   Text(
                     '€3450',
+                    style: TextStyle(
+                      fontSize: 20.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -395,9 +457,24 @@ class _SeeAllState extends State<SeeAll> {
                   ),
                   Text(
                     'Soteria Vase',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0.w,
                   ),
                   Text(
                     '€1750',
+                    style: TextStyle(
+                      fontSize: 20.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -452,9 +529,24 @@ class _SeeAllState extends State<SeeAll> {
                   ),
                   Text(
                     'Kavuk Vase',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
                   ),
                   Text(
                     '€4250',
+                    style: TextStyle(
+                      fontSize: 20.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -540,9 +632,24 @@ class _SeeAllState extends State<SeeAll> {
                         ),
                         Text(
                           'Mystical Vase',
+                          style: TextStyle(
+                            fontSize: 14.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirBook',
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0.w,
                         ),
                         Text(
                           '€3150',
+                          style: TextStyle(
+                            fontSize: 20.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirBook',
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -608,9 +715,24 @@ class _SeeAllState extends State<SeeAll> {
                         ),
                         Text(
                           'Mystical Vase',
+                          style: TextStyle(
+                            fontSize: 14.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirBook',
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0,
                         ),
                         Text(
                           '€4850',
+                          style: TextStyle(
+                            fontSize: 20.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirBook',
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -696,8 +818,12 @@ class _SeeAllState extends State<SeeAll> {
               expandedHeight: mediaQuery.size.height / 10,
               backgroundColor: Colors.black,
               title: Text(
-                '            CATEGORIES',
-                style: TextStyle(color: Colors.white),
+                '                      CATEGORIES',
+                style: TextStyle(
+                    fontSize: 13.0.w,
+                    color: Colors.white,
+                    fontFamily: 'Avenir',
+                    fontWeight: FontWeight.normal),
                 textAlign: TextAlign.center,
               ),
               actions: <Widget>[
@@ -739,25 +865,38 @@ class _SeeAllState extends State<SeeAll> {
                         topRight: Radius.circular(20.0),
                       ),
                     ),
-                    child: Center(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 0.0),
+                      padding: EdgeInsets.symmetric(horizontal: 0.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                        ),
+                      ),
                       child: ListView(
+                        scrollDirection: Axis.vertical,
+                        padding: EdgeInsets.only(top: 40.0.w),
                         children: <Widget>[
                           Text(
-                            'Ottoman Collection Classic Collections',
+                            'Ottoman Collection           Classic Collections',
                             textAlign: TextAlign.center,
                             style: TextStyle(
+                              fontSize: 30.0.w,
                               color: Colors.black,
+                              fontFamily: 'AvenirHeavy',
                               fontWeight: FontWeight.bold,
-                              fontSize: 30,
                             ),
                           ),
                           Text(
                             'Search through more than 1000+ watches',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
+                              fontSize: 14.0.w,
+                              color: shipping,
+                              fontFamily: 'AvenirBook',
+                              fontWeight: FontWeight.normal,
                             ),
                           ),
 
@@ -770,7 +909,9 @@ class _SeeAllState extends State<SeeAll> {
                                   child: Text(
                                     "Limited Edition",
                                     style: TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 20.0.w,
+                                      color: Colors.black,
+                                      fontFamily: 'AvenirHeavy',
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -787,8 +928,13 @@ class _SeeAllState extends State<SeeAll> {
                                     Navigator.of(context).push(route);
                                   },
                                   child: Text(
-                                    "See All >>",
-                                    style: TextStyle(color: Colors.deepPurple),
+                                    "See all >>",
+                                    style: TextStyle(
+                                      fontSize: 14.0.w,
+                                      color: pasa,
+                                      fontFamily: 'AvenirBook',
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -804,27 +950,29 @@ class _SeeAllState extends State<SeeAll> {
                             children: <Widget>[
                               Expanded(
                                 child: Padding(
-                                  padding:
-                                      EdgeInsets.only(left: 10.0, top: 20.0),
+                                  padding: EdgeInsets.only(
+                                      left: 10.0, top: 0.0, bottom: 15.0),
                                   child: Text(
                                     "Anatolian Civilizations Catalog",
                                     style: TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 20.0.w,
+                                      color: Colors.black,
+                                      fontFamily: 'AvenirBook',
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsets.only(top: 20.0, right: 20.0),
+                                padding: EdgeInsets.only(
+                                    top: 0.0, right: 20.0, bottom: 15.0),
                                 child: GestureDetector(
                                   onTap: () {
                                     print('2');
                                   },
                                   child: Text(
-                                    "See All >>",
-                                    style: TextStyle(color: Colors.deepPurple),
+                                    "See all >>",
+                                    style: TextStyle(color: pasa),
                                   ),
                                 ),
                               ),
@@ -843,7 +991,9 @@ class _SeeAllState extends State<SeeAll> {
                                   child: Text(
                                     "Zevk-i Selim Catalog",
                                     style: TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 20.0.w,
+                                      color: Colors.black,
+                                      fontFamily: 'AvenirBook',
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -857,8 +1007,8 @@ class _SeeAllState extends State<SeeAll> {
                                     print('object');
                                   },
                                   child: Text(
-                                    "See All >>",
-                                    style: TextStyle(color: Colors.deepPurple),
+                                    "See all >>",
+                                    style: TextStyle(color: pasa),
                                   ),
                                 ),
                               ),

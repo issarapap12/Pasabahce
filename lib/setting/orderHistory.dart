@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newflutter/data/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderHistory extends StatefulWidget {
   @override
@@ -18,10 +19,17 @@ class _OrderHistoryState extends State<OrderHistory> {
           slivers: <Widget>[
             SliverAppBar(
               title: Center(
-                child: Text(
-                  'Order History',
-                  style: TextStyle(color: Colors.white),
-                  textAlign: TextAlign.center,
+                child: Container(
+                  padding: EdgeInsets.only(right: 50.0.w),
+                  child: Text(
+                    'Order History',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 13.0.w,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.normal),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
               expandedHeight: mediaQuery.size.height / 10,
@@ -56,8 +64,10 @@ class _OrderHistoryState extends State<OrderHistory> {
                             Text(
                               'ORDER #21412',
                               style: TextStyle(
-                                color: Colors.grey,
-                              ),
+                                  color: shipping,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                             SizedBox(
                               width: 150.0,
@@ -67,8 +77,10 @@ class _OrderHistoryState extends State<OrderHistory> {
                               child: Text(
                                 'View Details',
                                 style: TextStyle(
-                                  color: pasa,
-                                ),
+                                    color: pasa,
+                                    fontSize: 14.0.w,
+                                    fontFamily: 'AvenirBook',
+                                    fontWeight: FontWeight.normal),
                               ),
                             ),
                           ],
@@ -80,12 +92,24 @@ class _OrderHistoryState extends State<OrderHistory> {
                             ),
                             Text(
                               'Placed On:',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                               textAlign: TextAlign.left,
                             ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            Text('23th of January'),
+                            Text(
+                              '23th of January',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ],
                         ),
                         Row(
@@ -94,14 +118,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                               width: 25.0,
                               height: 30.0,
                             ),
-                            Text('Amount: '),
+                            Text(
+                              'Amount: ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                             SizedBox(
                               width: 20.0,
                             ),
                             Text(
                               new String.fromCharCodes(
-                                new Runes('\u0024230.99'),
+                                new Runes(
+                                  '\u0024230.99',
+                                ),
                               ),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
@@ -111,11 +149,25 @@ class _OrderHistoryState extends State<OrderHistory> {
                               width: 25.0,
                               height: 30.0,
                             ),
-                            Text('Status:'),
+                            Text(
+                              'Status:',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                             SizedBox(
                               width: 30.0,
                             ),
-                            Text('Delivered'),
+                            Text(
+                              'Delivered',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ],
                         ),
                         Container(
@@ -133,8 +185,10 @@ class _OrderHistoryState extends State<OrderHistory> {
                             Text(
                               'ORDER #21403',
                               style: TextStyle(
-                                color: Colors.grey,
-                              ),
+                                  color: shipping,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                             SizedBox(
                               width: 150.0,
@@ -144,8 +198,10 @@ class _OrderHistoryState extends State<OrderHistory> {
                               child: Text(
                                 'View Details',
                                 style: TextStyle(
-                                  color: pasa,
-                                ),
+                                    color: pasa,
+                                    fontSize: 14.0.w,
+                                    fontFamily: 'AvenirBook',
+                                    fontWeight: FontWeight.normal),
                               ),
                             ),
                           ],
@@ -157,12 +213,24 @@ class _OrderHistoryState extends State<OrderHistory> {
                             ),
                             Text(
                               'Placed On: ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                               textAlign: TextAlign.left,
                             ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            Text('31st of December'),
+                            Text(
+                              '31st of December',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ],
                         ),
                         Row(
@@ -171,14 +239,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                               width: 25.0,
                               height: 30.0,
                             ),
-                            Text('Amount: '),
+                            Text(
+                              'Amount: ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                             SizedBox(
                               width: 22.0,
                             ),
                             Text(
                               new String.fromCharCodes(
-                                new Runes('\u0024230.99'),
+                                new Runes(
+                                  '\u0024230.99',
+                                ),
                               ),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
@@ -188,11 +270,25 @@ class _OrderHistoryState extends State<OrderHistory> {
                               width: 25.0,
                               height: 30.0,
                             ),
-                            Text('Status:'),
+                            Text(
+                              'Status:',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                             SizedBox(
                               width: 35.0,
                             ),
-                            Text('Delivered'),
+                            Text(
+                              'Delivered',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ],
                         ),
                         Container(
@@ -210,8 +306,10 @@ class _OrderHistoryState extends State<OrderHistory> {
                             Text(
                               'ORDER #21412',
                               style: TextStyle(
-                                color: Colors.grey,
-                              ),
+                                  color: shipping,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                             SizedBox(
                               width: 150.0,
@@ -221,8 +319,10 @@ class _OrderHistoryState extends State<OrderHistory> {
                               child: Text(
                                 'View Details',
                                 style: TextStyle(
-                                  color: pasa,
-                                ),
+                                    color: pasa,
+                                    fontSize: 14.0.w,
+                                    fontFamily: 'AvenirBook',
+                                    fontWeight: FontWeight.normal),
                               ),
                             ),
                           ],
@@ -234,12 +334,24 @@ class _OrderHistoryState extends State<OrderHistory> {
                             ),
                             Text(
                               'Placed On: ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                               textAlign: TextAlign.left,
                             ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            Text('31st of December'),
+                            Text(
+                              '31st of December',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ],
                         ),
                         Row(
@@ -248,14 +360,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                               width: 25.0,
                               height: 30.0,
                             ),
-                            Text('Amount: '),
+                            Text(
+                              'Amount: ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                             SizedBox(
                               width: 22.0,
                             ),
                             Text(
                               new String.fromCharCodes(
-                                new Runes('\u002499.00'),
+                                new Runes(
+                                  '\u002499.00',
+                                ),
                               ),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
@@ -265,11 +391,25 @@ class _OrderHistoryState extends State<OrderHistory> {
                               width: 25.0,
                               height: 30.0,
                             ),
-                            Text('Status:'),
+                            Text(
+                              'Status:',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                             SizedBox(
                               width: 35.0,
                             ),
-                            Text('Delivered'),
+                            Text(
+                              'Delivered',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ],
                         ),
                         Container(
@@ -287,8 +427,10 @@ class _OrderHistoryState extends State<OrderHistory> {
                             Text(
                               'ORDER #21358',
                               style: TextStyle(
-                                color: Colors.grey,
-                              ),
+                                  color: shipping,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                             SizedBox(
                               width: 150.0,
@@ -298,8 +440,10 @@ class _OrderHistoryState extends State<OrderHistory> {
                               child: Text(
                                 'View Details',
                                 style: TextStyle(
-                                  color: pasa,
-                                ),
+                                    color: pasa,
+                                    fontSize: 14.0.w,
+                                    fontFamily: 'AvenirBook',
+                                    fontWeight: FontWeight.normal),
                               ),
                             ),
                           ],
@@ -311,12 +455,24 @@ class _OrderHistoryState extends State<OrderHistory> {
                             ),
                             Text(
                               'Placed On: ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                               textAlign: TextAlign.left,
                             ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            Text('14th of November'),
+                            Text(
+                              '14th of November',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ],
                         ),
                         Row(
@@ -325,14 +481,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                               width: 25.0,
                               height: 30.0,
                             ),
-                            Text('Amount: '),
+                            Text(
+                              'Amount: ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                             SizedBox(
                               width: 22.0,
                             ),
                             Text(
                               new String.fromCharCodes(
-                                new Runes('\u0024599.00'),
+                                new Runes(
+                                  '\u0024599.00',
+                                ),
                               ),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
@@ -342,11 +512,25 @@ class _OrderHistoryState extends State<OrderHistory> {
                               width: 25.0,
                               height: 30.0,
                             ),
-                            Text('Status:'),
+                            Text(
+                              'Status:',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                             SizedBox(
                               width: 35.0,
                             ),
-                            Text('Delivered'),
+                            Text(
+                              'Delivered',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ],
                         ),
                         Container(

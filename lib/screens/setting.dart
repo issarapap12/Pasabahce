@@ -9,6 +9,7 @@ import 'package:newflutter/setting/nearbyStores.dart';
 import 'package:newflutter/setting/orderHistory.dart';
 import 'package:newflutter/setting/settingsIn.dart';
 import 'package:newflutter/setting/vouchers.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Setting extends StatefulWidget {
   @override
@@ -66,7 +67,10 @@ class _SettingState extends State<Setting> {
           Text(
             "Choose Profile Photo",
             style: TextStyle(
-              fontSize: 20.0,
+              fontSize: 20.0.w,
+              color: Colors.black,
+              fontFamily: 'AvenirBook',
+              fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(
@@ -80,14 +84,30 @@ class _SettingState extends State<Setting> {
                   takePhoto(ImageSource.camera);
                 },
                 icon: Icon(Icons.camera),
-                label: Text("Camera"),
+                label: Text(
+                  "Camera",
+                  style: TextStyle(
+                    fontSize: 14.0.w,
+                    color: Colors.black,
+                    fontFamily: 'AvenirBook',
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
               ),
               FlatButton.icon(
                 onPressed: () {
                   takePhoto(ImageSource.gallery);
                 },
                 icon: Icon(Icons.image),
-                label: Text("Image"),
+                label: Text(
+                  "Image",
+                  style: TextStyle(
+                    fontSize: 14.0.w,
+                    color: Colors.black,
+                    fontFamily: 'AvenirBook',
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
               ),
             ],
           ),
@@ -107,175 +127,305 @@ class _SettingState extends State<Setting> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            padding:
-                EdgeInsets.only(top: 60.0, left: 0.0, right: 0.0, bottom: 30.0),
-          ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 0.0),
-              padding: EdgeInsets.symmetric(horizontal: 0.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.0),
-                  topRight: Radius.circular(20.0),
+      body: Container(
+        color: Colors.black,
+        child: CustomScrollView(
+          slivers: <Widget>[
+            new SliverAppBar(
+              automaticallyImplyLeading: false,
+              title: Center(
+                child: Container(
+                  padding: EdgeInsets.only(right: 5.w),
+                  child: Text(
+                    'Settings & More',
+                    style: TextStyle(
+                        fontSize: 13.0.w,
+                        color: Colors.white,
+                        fontFamily: 'AvenirBook',
+                        fontWeight: FontWeight.normal),
+                  ),
                 ),
               ),
-              child: Center(
-                child: ListView(
-                  children: <Widget>[
-                    imageProfile(context),
-
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          0.0,
+              expandedHeight: mediaQuery.size.height / 10,
+              backgroundColor: Colors.black,
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(9))),
+            ),
+            new SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  Container(
+                    padding: EdgeInsets.zero,
+                    height: mediaQuery.size.height,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20.0),
+                        topRight: Radius.circular(20.0),
+                      ),
+                    ),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 0.0),
+                      padding: EdgeInsets.symmetric(horizontal: 0.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
                         ),
                       ),
                       child: Column(
                         children: <Widget>[
-                          ListTile(
-                            // leading: Icon(Icons.navigate_next),
-                            title: Text("Order History"),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              var route = MaterialPageRoute(
-                                  builder: (context) => OrderHistory());
-                              Navigator.of(context).push(route);
-                            },
+                          SizedBox(
+                            height: 25.0,
                           ),
-                          Container(
-                            margin: const EdgeInsets.only(
-                              left: 15.0,
-                              right: 15.0,
+                          imageProfile(context),
+
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                0.0,
+                              ),
                             ),
-                            child: Divider(
-                              color: Colors.black26,
+                            child: Column(
+                              children: <Widget>[
+                                ListTile(
+                                  // leading: Icon(Icons.navigate_next),
+                                  title: Text(
+                                    "Order History",
+                                    style: TextStyle(
+                                        fontSize: 14.0.w,
+                                        color: Colors.black,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                  onTap: () {
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => OrderHistory());
+                                    Navigator.of(context).push(route);
+                                  },
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 15.0,
+                                    right: 15.0,
+                                  ),
+                                  child: Divider(
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                                ListTile(
+                                  // leading: Icon(Icons.navigate_next),
+                                  title: Text(
+                                    "My Addresses",
+                                    style: TextStyle(
+                                        fontSize: 14.0.w,
+                                        color: Colors.black,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                  onTap: () {
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => MyAddress());
+                                    Navigator.of(context).push(route);
+                                  },
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 15.0,
+                                    right: 15.0,
+                                  ),
+                                  child: Divider(
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                                ListTile(
+                                  // leading: Icon(Icons.navigate_next),
+                                  title: Text(
+                                    "My Cards",
+                                    style: TextStyle(
+                                        fontSize: 14.0.w,
+                                        color: Colors.black,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                  onTap: () {
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => MyCard());
+                                    Navigator.of(context).push(route);
+                                  },
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 15.0,
+                                    right: 15.0,
+                                  ),
+                                  child: Divider(
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                                ListTile(
+                                  // leading: Icon(Icons.navigate_next),
+                                  title: Text(
+                                    "Vouchers",
+                                    style: TextStyle(
+                                        fontSize: 14.0.w,
+                                        color: Colors.black,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                  onTap: () {
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => Vouchers());
+                                    Navigator.of(context).push(route);
+                                  },
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 15.0,
+                                    right: 15.0,
+                                  ),
+                                  child: Divider(
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                                ListTile(
+                                  // leading: Icon(Icons.navigate_next),
+                                  title: Text(
+                                    "Nearby Stores",
+                                    style: TextStyle(
+                                        fontSize: 14.0.w,
+                                        color: Colors.black,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                  onTap: () {
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => NearbyStores());
+                                    Navigator.of(context).push(route);
+                                  },
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 15.0,
+                                    right: 15.0,
+                                  ),
+                                  child: Divider(
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                                ListTile(
+                                  // leading: Icon(Icons.navigate_next),
+                                  title: Text(
+                                    "Latest Articles",
+                                    style: TextStyle(
+                                        fontSize: 14.0.w,
+                                        color: Colors.black,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                  onTap: () {
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => LatestArticles());
+                                    Navigator.of(context).push(route);
+                                  },
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 15.0,
+                                    right: 15.0,
+                                  ),
+                                  child: Divider(
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                                ListTile(
+                                  // leading: Icon(Icons.navigate_next),
+                                  title: Text(
+                                    "Settings",
+                                    style: TextStyle(
+                                        fontSize: 14.0.w,
+                                        color: Colors.black,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                  onTap: () {
+                                    var route = MaterialPageRoute(
+                                        builder: (context) => SettingsIn());
+                                    Navigator.of(context).push(route);
+                                  },
+                                ),
+                              ],
                             ),
                           ),
-                          ListTile(
-                            // leading: Icon(Icons.navigate_next),
-                            title: Text("My Addresses"),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              var route = MaterialPageRoute(
-                                  builder: (context) => MyAddress());
-                              Navigator.of(context).push(route);
-                            },
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(
-                              left: 15.0,
-                              right: 15.0,
-                            ),
-                            child: Divider(
-                              color: Colors.black26,
-                            ),
-                          ),
-                          ListTile(
-                            // leading: Icon(Icons.navigate_next),
-                            title: Text("My Cards"),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              var route = MaterialPageRoute(
-                                  builder: (context) => MyCard());
-                              Navigator.of(context).push(route);
-                            },
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(
-                              left: 15.0,
-                              right: 15.0,
-                            ),
-                            child: Divider(
-                              color: Colors.black26,
-                            ),
-                          ),
-                          ListTile(
-                            // leading: Icon(Icons.navigate_next),
-                            title: Text("Vouchers"),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              var route = MaterialPageRoute(
-                                  builder: (context) => Vouchers());
-                              Navigator.of(context).push(route);
-                            },
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(
-                              left: 15.0,
-                              right: 15.0,
-                            ),
-                            child: Divider(
-                              color: Colors.black26,
-                            ),
-                          ),
-                          ListTile(
-                            // leading: Icon(Icons.navigate_next),
-                            title: Text("Nearby Stores"),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              var route = MaterialPageRoute(
-                                  builder: (context) => NearbyStores());
-                              Navigator.of(context).push(route);
-                            },
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(
-                              left: 15.0,
-                              right: 15.0,
-                            ),
-                            child: Divider(
-                              color: Colors.black26,
-                            ),
-                          ),
-                          ListTile(
-                            // leading: Icon(Icons.navigate_next),
-                            title: Text("Latest Articles"),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              var route = MaterialPageRoute(
-                                  builder: (context) => LatestArticles());
-                              Navigator.of(context).push(route);
-                            },
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(
-                              left: 15.0,
-                              right: 15.0,
-                            ),
-                            child: Divider(
-                              color: Colors.black26,
-                            ),
-                          ),
-                          ListTile(
-                            // leading: Icon(Icons.navigate_next),
-                            title: Text("Settings"),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              var route = MaterialPageRoute(
-                                  builder: (context) => SettingsIn());
-                              Navigator.of(context).push(route);
-                            },
-                          ),
+
+                          // Items List Container
                         ],
                       ),
                     ),
-
-                    // Items List Container
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.black,
+//       body: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: <Widget>[
+//           Container(
+//             padding:
+//                 EdgeInsets.only(top: 10.0, left: 0.0, right: 0.0, bottom: 50.0),
+//           ),
+//           Row(
+//             children: <Widget>[
+//               Container(
+//                 child: Text(
+//                   'Settings & More',
+//                   style: TextStyle(
+//                     fontSize: 13.0.w,
+//                     color: Colors.white,
+//                     fontFamily: 'AvenirBook',
+//                     fontWeight: FontWeight.normal,
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//           Expanded(
+//             child: Container(
+//               margin: EdgeInsets.symmetric(horizontal: 0.0),
+//               padding: EdgeInsets.symmetric(horizontal: 0.0),
+//               decoration: BoxDecoration(
+//                 color: Colors.white,
+//                 borderRadius: BorderRadius.only(
+//                   topLeft: Radius.circular(20.0),
+//                   topRight: Radius.circular(20.0),
+//                 ),
+//               ),
+
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

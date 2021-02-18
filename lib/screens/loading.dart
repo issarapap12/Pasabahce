@@ -4,8 +4,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:newflutter/data/constants.dart';
+import 'package:newflutter/data/progresshud.dart';
 import 'package:newflutter/screens/signIn.dart';
 import 'package:newflutter/screens/verification.dart';
+import 'package:circle_progress/circle_progress.dart';
 
 class Loading extends StatefulWidget {
   @override
@@ -29,29 +31,31 @@ class _LoadingState extends State<Loading> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    SpinKitCircle(
-                      color: pasa,
-                    ),
-                  ],
-                ),
-                Text(
-                  'Loading',
-                  style: TextStyle(color: pasa),
+      body: ProgressHud(
+        maximumDismissDuration: Duration(seconds: 2),
+        child: Center(
+          child: Builder(builder: (context) {
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  onPressed: () {
+                    _showLoadingHud(context);
+                  },
+                  child: Text("show loading"),
                 ),
               ],
-            ),
-          ],
+            );
+          }),
         ),
       ),
     );
+  }
+
+  _showLoadingHud(BuildContext context) async {
+    ProgressHud.of(context).show(ProgressHudType.loading, "loading...");
+    await Future.delayed(const Duration(seconds: 1));
+    ProgressHud.of(context).dismiss();
   }
 }

@@ -71,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.1"
+  circle_progress:
+    dependency: "direct main"
+    description:
+      name: circle_progress
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   clock:
     dependency: transitive
     description:
@@ -375,6 +382,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.2"
+  load:
+    dependency: "direct main"
+    description:
+      name: load
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.6"
   loading_gifs:
     dependency: "direct main"
     description:
@@ -403,6 +417,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.4"
+  page_view_indicators:
+    dependency: "direct main"
+    description:
+      name: page_view_indicators
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.1"
   passwordfield:
     dependency: "direct main"
     description:
@@ -471,6 +492,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_page_indicator:
+    dependency: "direct main"
+    description:
+      name: smooth_page_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   smooth_star_rating:
     dependency: "direct main"
     description:

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:credit_card_slider/credit_card_slider.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCard extends StatefulWidget {
   @override
@@ -29,6 +30,87 @@ class _CardState extends State<MyCard> {
     });
   }
 
+//   @override
+//   Widget build(BuildContext context) {
+//     var mediaQuery = MediaQuery.of(context);
+//     return Scaffold(
+//       body: Container(
+//         color: Colors.black,
+//         child: CustomScrollView(
+//           slivers: <Widget>[
+//             new SliverAppBar(
+
+//               // automaticallyImplyLeading: false,
+//               title: Center(
+//                 child: Container(
+//                   padding: EdgeInsets.only(right: 5.w),
+//                   child: Text(
+//                     'MY CARD (2)',
+//                     style: TextStyle(
+//                         fontSize: 13.0.w,
+//                         color: Colors.white,
+//                         fontFamily: 'AvenirBook',
+//                         fontWeight: FontWeight.normal),
+//                   ),
+//                 ),
+//               ),
+
+//               expandedHeight: mediaQuery.size.height / 3,
+//               backgroundColor: Colors.black,
+//               shape: RoundedRectangleBorder(
+//                   borderRadius:
+//                       BorderRadius.only(bottomRight: Radius.circular(9)),
+//                       ),
+
+//             ),
+//             new SliverList(
+//               delegate: SliverChildListDelegate(
+//                 [
+//                   Container(
+//                     padding: EdgeInsets.zero,
+//                     height: mediaQuery.size.height,
+//                     decoration: BoxDecoration(
+//                       color: Colors.white,
+//                       borderRadius: BorderRadius.only(
+//                         topLeft: Radius.circular(20.0),
+//                         topRight: Radius.circular(20.0),
+//                       ),
+//                     ),
+//                     child: Container(
+//                       margin: EdgeInsets.symmetric(horizontal: 0.0),
+//                       padding: EdgeInsets.symmetric(horizontal: 0.0),
+//                       decoration: BoxDecoration(
+//                         color: Colors.white,
+//                         borderRadius: BorderRadius.only(
+//                           topLeft: Radius.circular(20.0),
+//                           topRight: Radius.circular(20.0),
+//                         ),
+//                       ),
+//                       child: Column(
+//                         children: <Widget>[
+//                           // ListView(
+//                           //   padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+//                           //   scrollDirection: Axis.horizontal,
+//                           //   children: <Widget>[
+//                           //     Image.asset('CreditCard2.png'),
+//                           //     Image.asset('CreditCard2.png'),
+//                           //   ],
+//                           // )
+//                           // Items List Container
+//                         ],
+//                       ),
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +123,12 @@ class _CardState extends State<MyCard> {
                 EdgeInsets.only(top: 60.0, left: 0.0, right: 0.0, bottom: 0.0),
             child: Stack(
               children: <Widget>[
+                // ListView(
+                //   scrollDirection: Axis.horizontal,
+                //   children: <Widget>[
+                //     Image.asset('CreditCard2.png'),
+                //   ],
+                // ),
                 CarouselSlider(
                   items: [
                     Container(
@@ -74,15 +162,11 @@ class _CardState extends State<MyCard> {
                   topRight: Radius.circular(20.0),
                 ),
               ),
-              child: Column(
+              child: ListView(
+                padding: EdgeInsets.zero,
                 children: <Widget>[
                   SizedBox(
                     height: 30.0,
-                  ),
-                  Row(
-                    children: [
-                      Text('Card Number'),
-                    ],
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -93,11 +177,6 @@ class _CardState extends State<MyCard> {
                   SizedBox(
                     height: 30.0,
                   ),
-                  Row(
-                    children: [
-                      Text('Cardholder Name'),
-                    ],
-                  ),
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Cardholder Name',
@@ -107,11 +186,6 @@ class _CardState extends State<MyCard> {
                   SizedBox(
                     height: 30.0,
                   ),
-                  Row(
-                    children: [
-                      Text('Cardholder Name'),
-                    ],
-                  ),
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Cardholder Name',
@@ -120,11 +194,6 @@ class _CardState extends State<MyCard> {
                   ),
                   SizedBox(
                     height: 30.0,
-                  ),
-                  Row(
-                    children: [
-                      Text('Cardholder Name'),
-                    ],
                   ),
                   TextField(
                     decoration: InputDecoration(

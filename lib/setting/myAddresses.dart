@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newflutter/data/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyAddress extends StatefulWidget {
   @override
@@ -24,12 +25,12 @@ class _MyAddressState extends State<MyAddress> {
 
   Widget display3() {
     return ButtonTheme(
-      minWidth: 240.0,
-      height: 44.0,
+      minWidth: 240.0.w,
+      height: 44.0.w,
       child: RaisedButton(
         color: pasa,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
+          borderRadius: BorderRadius.circular(25.0),
           side: BorderSide(
             color: pasa,
           ),
@@ -37,9 +38,10 @@ class _MyAddressState extends State<MyAddress> {
         child: Text(
           'Add another address',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 16.0,
-          ),
+              color: Colors.white,
+              fontSize: 15.0.w,
+              fontFamily: 'AvenirBook',
+              fontWeight: FontWeight.normal),
         ),
         onPressed: () {
           // print('You Click Sign IN');
@@ -70,11 +72,15 @@ class _MyAddressState extends State<MyAddress> {
               title: Row(
                 children: <Widget>[
                   SizedBox(
-                    width: 60.0,
+                    width: 85.0,
                   ),
                   Text(
                     'My addresses',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 13.0.w,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.normal),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -111,8 +117,10 @@ class _MyAddressState extends State<MyAddress> {
                             Text(
                               'HOME ADDRESS',
                               style: TextStyle(
-                                color: Colors.grey,
-                              ),
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                             SizedBox(
                               width: 150.0,
@@ -122,8 +130,10 @@ class _MyAddressState extends State<MyAddress> {
                               child: Text(
                                 'Change',
                                 style: TextStyle(
-                                  color: pasa,
-                                ),
+                                    color: pasa,
+                                    fontSize: 14.0.w,
+                                    fontFamily: 'AvenirBook',
+                                    fontWeight: FontWeight.normal),
                               ),
                             ),
                           ],
@@ -135,6 +145,11 @@ class _MyAddressState extends State<MyAddress> {
                             ),
                             Text(
                               'Dereboyu Cad. 23, 34410 - Istanbul/Türkiye',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                               textAlign: TextAlign.left,
                             ),
                           ],
@@ -162,8 +177,10 @@ class _MyAddressState extends State<MyAddress> {
                             Text(
                               'HOME ADDRESS',
                               style: TextStyle(
-                                color: Colors.grey,
-                              ),
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
                             SizedBox(
                               width: 150.0,
@@ -173,8 +190,10 @@ class _MyAddressState extends State<MyAddress> {
                               child: Text(
                                 'Change',
                                 style: TextStyle(
-                                  color: pasa,
-                                ),
+                                    color: pasa,
+                                    fontSize: 14.0.w,
+                                    fontFamily: 'AvenirBook',
+                                    fontWeight: FontWeight.normal),
                               ),
                             ),
                           ],
@@ -186,6 +205,11 @@ class _MyAddressState extends State<MyAddress> {
                             ),
                             Text(
                               'Dereboyu Cad. 23, 34410 - Istanbul/Türkiye',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                               textAlign: TextAlign.left,
                             ),
                           ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newflutter/screens/mainPage2.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Vouchers extends StatefulWidget {
   @override
@@ -23,14 +24,15 @@ class _VouchersState extends State<Vouchers> {
               children: <Widget>[
                 FlatButton(
                   onPressed: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return MainPage2();
-                        },
-                      ),
-                    ),
+                    Navigator.of(context).pop(),
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) {
+                    //       return MainPage2();
+                    //     },
+                    //   ),
+                    // ),
                   },
                   color: Colors.black,
                   child: Stack(
@@ -45,13 +47,18 @@ class _VouchersState extends State<Vouchers> {
                     ],
                   ),
                 ),
-                Text(
-                  ' My Vouchers ',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w700,
+                Container(
+                  padding: EdgeInsets.only(
+                    right: 15.0,
+                  ),
+                  child: Text(
+                    'My Vouchers ',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 13.0.w,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.normal),
                   ),
                 ),
               ],
@@ -71,15 +78,25 @@ class _VouchersState extends State<Vouchers> {
                 child: Column(
                   children: <Widget>[
                     SizedBox(
-                      height: 30.0,
+                      height: 30.0.w,
                     ),
                     Row(
                       children: <Widget>[
-                        Text('ACTIVE VOUCHERS'),
-                        SizedBox(
-                          height: 30.0,
+                        Container(
+                          padding: EdgeInsets.only(left: 20.0.w),
+                          child: Text(
+                            'ACTIVE VOUCHERS',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14.0.w,
+                                fontFamily: 'AvenirBook',
+                                fontWeight: FontWeight.normal),
+                          ),
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 15.0.w,
                     ),
                     Column(
                       children: <Widget>[
@@ -110,7 +127,17 @@ class _VouchersState extends State<Vouchers> {
                         SizedBox(
                           height: 40.0,
                         ),
-                        Text('USED VOUCHERS'),
+                        Container(
+                          padding: EdgeInsets.only(right: 175.0.w),
+                          child: Text(
+                            'USED VOUCHERS',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14.0.w,
+                                fontFamily: 'AvenirBook',
+                                fontWeight: FontWeight.normal),
+                          ),
+                        ),
                         SizedBox(
                           height: 20.0,
                         ),

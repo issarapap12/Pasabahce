@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_search_bar/flutter_search_bar.dart';
 import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Search extends StatefulWidget {
   @override
@@ -52,12 +53,43 @@ class _SearchState extends State<Search> {
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
+                title: Center(
+                  child: Container(
+                    padding: EdgeInsets.only(left: 80.0.w),
+                    child: Text(
+                      'SEARCH',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 13.0.w,
+                          fontFamily: 'Avenir',
+                          fontWeight: FontWeight.normal),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
                 automaticallyImplyLeading: false,
                 expandedHeight: mediaQuery.size.height / 10,
                 backgroundColor: Colors.black,
                 shape: RoundedRectangleBorder(
                     borderRadius:
                         BorderRadius.only(bottomRight: Radius.circular(9))),
+                actions: <Widget>[
+                  FlatButton(
+                    onPressed: () => {
+                      Navigator.of(context).pop(),
+                    },
+                    color: Colors.black,
+                    child: Stack(
+                      alignment: Alignment.topLeft,
+                      children: <Widget>[
+                        Icon(
+                          Icons.clear,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               SliverList(
                 delegate: SliverChildListDelegate(
@@ -83,19 +115,19 @@ class _SearchState extends State<Search> {
                               'Find your watch',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 30,
-                              ),
+                                  color: Colors.black,
+                                  fontSize: 30.0.w,
+                                  fontFamily: 'Avenir',
+                                  fontWeight: FontWeight.normal),
                             ),
                             Text(
                               "Search through more than 1000+ watches",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 15,
-                              ),
+                                  color: Colors.black,
+                                  fontSize: 14.0.w,
+                                  fontFamily: 'Avenir',
+                                  fontWeight: FontWeight.normal),
                             ),
 
                             Padding(

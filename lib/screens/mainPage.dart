@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:newflutter/data/constants.dart';
 import 'package:newflutter/itemdetail/R90.dart';
 import 'package:newflutter/itemdetail/godBowl.dart';
 import 'package:newflutter/itemdetail/kavukvase.dart';
@@ -21,6 +22,8 @@ import 'package:newflutter/screens/setting.dart';
 import 'package:newflutter/screens/splash2.dart';
 import 'package:newflutter/screens/verification.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:newflutter/screens/signIn.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainPage extends StatefulWidget {
   // MainPage(Key key) : super(key: key);
@@ -92,9 +95,19 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Text(
                     'Thank God Bowl',
+                    style: TextStyle(
+                        fontSize: 14.0.w,
+                        color: Colors.black,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.normal),
                   ),
                   Text(
                     '€1750',
+                    style: TextStyle(
+                        fontSize: 20.0.w,
+                        color: Colors.black,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -129,9 +142,19 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Text(
                     'Kavuk Vase',
+                    style: TextStyle(
+                        fontSize: 14.0.w,
+                        color: Colors.black,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.normal),
                   ),
                   Text(
                     '€4250',
+                    style: TextStyle(
+                        fontSize: 20.0.w,
+                        color: Colors.black,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -166,9 +189,19 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Text(
                     'Rumili Kase',
+                    style: TextStyle(
+                        fontSize: 14.0.w,
+                        color: Colors.black,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.normal),
                   ),
                   Text(
                     '€2350',
+                    style: TextStyle(
+                        fontSize: 20.0.w,
+                        color: Colors.black,
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -217,9 +250,20 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Text(
                     'Hagia Sophia Deesis',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                   Text(
                     '€3450',
+                    style: TextStyle(
+                        fontSize: 20.0.w,
+                        color: Colors.black,
+                        fontFamily: 'AvenirHeavy',
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -254,9 +298,21 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Text(
                     'Kavuk Vase',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                   Text(
                     '€4250',
+                    style: TextStyle(
+                      fontSize: 20.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirHeavy',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -291,9 +347,21 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Text(
                     'Soteria Vase',
+                    style: TextStyle(
+                      fontSize: 14.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirBook',
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                   Text(
                     '€1750',
+                    style: TextStyle(
+                      fontSize: 20.0.w,
+                      color: Colors.black,
+                      fontFamily: 'AvenirHeavy',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -348,9 +416,21 @@ class _MainPageState extends State<MainPage> {
                         ),
                         Text(
                           'Mystical Vase',
+                          style: TextStyle(
+                            fontSize: 14.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirBook',
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                         Text(
                           '€3150',
+                          style: TextStyle(
+                            fontSize: 20.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirHeavy',
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -385,9 +465,21 @@ class _MainPageState extends State<MainPage> {
                         ),
                         Text(
                           'Mystical Vase',
+                          style: TextStyle(
+                            fontSize: 14.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirBook',
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                         Text(
                           '€4850',
+                          style: TextStyle(
+                            fontSize: 20.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirHeavy',
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -422,9 +514,21 @@ class _MainPageState extends State<MainPage> {
                         ),
                         Text(
                           'Thank God Bowl',
+                          style: TextStyle(
+                            fontSize: 14.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirBook',
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                         Text(
                           '€1750',
+                          style: TextStyle(
+                            fontSize: 20.0.w,
+                            color: Colors.black,
+                            fontFamily: 'AvenirHeavy',
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -441,60 +545,89 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  // Widget signOutButton() {
-  //   return IconButton(
-  //     icon: Icon(Icons.exit_to_app),
-  //     tooltip: 'Sign Out',
-  //     onPressed: () {
-  //       // myAlert();
-  //     },
-  //   );
-  // }
+  Widget signOutButton() {
+    return IconButton(
+      icon: Icon(Icons.exit_to_app),
+      tooltip: 'Sign Out',
+      onPressed: () {
+        myAlert();
+      },
+    );
+  }
 
-  // void myAlert() {
-  //   showDialog(
-  //       context: context,
-  //       builder: (BuildContext context) {
-  //         return AlertDialog(
-  //           title: Text('Are You Sure ?'),
-  //           content: Text('Do you want Sign Out?'),
-  //           actions: <Widget>[
-  //             cancelButton(),
-  //             okButton(),
-  //           ],
-  //         );
-  //       });
-  // }
+  void myAlert() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              'Are You Sure ?',
+              style: TextStyle(
+                  fontSize: 14.w,
+                  color: Colors.black,
+                  fontFamily: 'Avenir',
+                  fontWeight: FontWeight.w500),
+            ),
+            content: Text(
+              'Do you want Sign Out?',
+              style: TextStyle(
+                  fontSize: 14.w,
+                  color: Colors.black,
+                  fontFamily: 'Avenir',
+                  fontWeight: FontWeight.w500),
+            ),
+            actions: <Widget>[
+              cancelButton(),
+              okButton(),
+            ],
+          );
+        });
+  }
 
-  // Future<void> processSignOut() async {
-  //   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-  //   await firebaseAuth.signOut().then((response) {
-  //     MaterialPageRoute materialPageRoute =
-  //         MaterialPageRoute(builder: (BuildContext context) => Splash2());
+  Future<void> processSignOut() async {
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    await firebaseAuth.signOut().then((response) {
+      MaterialPageRoute materialPageRoute =
+          MaterialPageRoute(builder: (BuildContext context) => Splash2());
 
-  //     Navigator.of(context).pushAndRemoveUntil(
-  //         materialPageRoute, (Route<dynamic> route) => false);
-  //   });
-  // }
+      Navigator.of(context).pushAndRemoveUntil(
+          materialPageRoute, (Route<dynamic> route) => false);
+    });
+  }
 
-  // Widget cancelButton() {
-  //   return FlatButton(
-  //     onPressed: () {
-  //       Navigator.of(context).pop();
-  //     },
-  //     child: Text('Cancel'),
-  //   );
-  // }
+  Widget cancelButton() {
+    return FlatButton(
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+      child: Text(
+        'Cancel',
+        style: TextStyle(
+            fontSize: 14.w,
+            color: Colors.black,
+            fontFamily: 'Avenir',
+            fontWeight: FontWeight.w500),
+      ),
+    );
+  }
 
-  // Widget okButton() {
-  //   return FlatButton(
-  //     onPressed: () {
-  //       Navigator.of(context).pop();
-  //       processSignOut();
-  //     },
-  //     child: Text('ok'),
-  //   );
-  // }
+  Widget okButton() {
+    return FlatButton(
+      color: pasa,
+      onPressed: () {
+        Navigator.of(context).pop();
+        processSignOut();
+      },
+      child: Text(
+        'ok',
+        style: TextStyle(
+            fontSize: 14.w,
+            color: Colors.white,
+            fontFamily: 'Avenir',
+            fontWeight: FontWeight.w500),
+      ),
+    );
+  }
 
   Container itemsList4() {
     return new Container(
@@ -523,15 +656,15 @@ class _MainPageState extends State<MainPage> {
                           borderRadius: BorderRadius.circular(20.0),
                           child: Image.asset(
                             'image/MysticalVase.png',
-                            width: 160.0,
-                            height: 160.0,
+                            width: 160.0.w,
+                            height: 160.0.w,
                           ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      width: 30.0,
-                      height: 20.0,
+                      width: 30.0.w,
+                      height: 20.0.w,
                     ),
                     Text(
                       'Thank God Bowl',
@@ -628,13 +761,13 @@ class _MainPageState extends State<MainPage> {
 
   Container itemsList5() {
     return new Container(
-      height: 220.0,
+      height: 220.0.w,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           SizedBox(
-            width: 25.0,
-            height: 10.0,
+            width: 25.0.w,
+            height: 10.0.w,
           ),
           Row(
             children: [
@@ -663,8 +796,8 @@ class _MainPageState extends State<MainPage> {
                               child: ClipRRect(
                                 child: Image.asset(
                                   'image/Rectangle.png',
-                                  width: 315.0,
-                                  height: 160.0,
+                                  width: 315.0.w,
+                                  height: 160.0.w,
                                 ),
                               ),
                             ),
@@ -690,22 +823,48 @@ class _MainPageState extends State<MainPage> {
                       //   ),
                       // ),
                       Positioned(
-                        bottom: 120.0,
+                        bottom: 0.0,
                         right: 180.0,
+                        left: 20.0,
+                        top: 30.0,
                         // left: 120.0,
                         child: InkWell(
                           onTap: () {},
                           child: Column(
                             children: [
+                              SizedBox(
+                                height: 20.0,
+                              ),
                               Text(
-                                'Gulcehre Ibrik',
+                                'Gulcehre   Ibrik',
                                 style: TextStyle(
-                                  color: Colors.white,
-                                  // fontFamily: 'Avenir-Book.otf',
+                                    fontSize: 20.0.w,
+                                    color: Colors.white,
+                                    fontFamily: 'Avenir',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(right: 15.0.w),
+                                child: Text(
+                                  'W:32cm H:26cm',
+                                  style: TextStyle(
+                                      fontSize: 14.0.w,
+                                      color: Colors.white,
+                                      fontFamily: 'Avenir',
+                                      fontWeight: FontWeight.normal),
                                 ),
                               ),
-                              Text('W:32cm H:26cm'),
-                              Text('€5650'),
+                              Container(
+                                padding: EdgeInsets.only(right: 55.0.w),
+                                child: Text(
+                                  '€5650',
+                                  style: TextStyle(
+                                      fontSize: 24.0.w,
+                                      color: Colors.white,
+                                      fontFamily: 'Avenir',
+                                      fontWeight: FontWeight.normal),
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -910,11 +1069,16 @@ class _MainPageState extends State<MainPage> {
         color: Colors.black,
         child: CustomScrollView(
           slivers: <Widget>[
-            SliverAppBar(
+            new SliverAppBar(
+              // automaticallyImplyLeading: false,
               title: Center(
                 child: Text(
                   'Store',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13.0.w,
+                      fontFamily: 'Avenir',
+                      fontWeight: FontWeight.normal),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -922,7 +1086,10 @@ class _MainPageState extends State<MainPage> {
               backgroundColor: Colors.black,
               actions: <Widget>[
                 IconButton(
-                    icon: Icon(Icons.search),
+                    icon: Icon(
+                      Icons.search,
+                      size: 20.0.w,
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -948,171 +1115,202 @@ class _MainPageState extends State<MainPage> {
                         topRight: Radius.circular(20.0),
                       ),
                     ),
-                    child: Center(
-                      child: ListView(
-                        children: <Widget>[
-                          Text(
-                            'Ottoman Collection',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 0.0),
+                      padding: EdgeInsets.symmetric(horizontal: 0.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                        ),
+                      ),
+                      child: Center(
+                        child: ListView(
+                          padding: EdgeInsets.only(top: 40.0.w),
+                          children: <Widget>[
+                            Text(
+                              'Ottoman Collection',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 30.0.w,
+                                  color: Colors.black,
+                                  fontFamily: 'AvenirHeavy',
+                                  fontWeight: FontWeight.bold),
                             ),
-                          ),
-                          Text(
-                            'Find the perfect watch for your wrist',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
+                            Text(
+                              'Find the perfect watch for your wrist',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 14.0.w,
+                                  color: Colors.grey,
+                                  fontFamily: 'AvenirBook',
+                                  fontWeight: FontWeight.normal),
                             ),
-                          ),
 
-                          Row(
-                            children: <Widget>[
-                              Expanded(
-                                child: Padding(
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10.0, top: 20.0),
+                                    child: Text(
+                                      "Categories",
+                                      style: TextStyle(
+                                          fontSize: 20.0.w,
+                                          color: Colors.black,
+                                          fontFamily: 'Avenir',
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
                                   padding:
-                                      EdgeInsets.only(left: 10.0, top: 20.0),
-                                  child: Text(
-                                    "Categories",
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
+                                      EdgeInsets.only(top: 20.0, right: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      print('3');
+                                      var route = MaterialPageRoute(
+                                          builder: (context) => SeeAll10());
+                                      Navigator.of(context).push(route);
+                                    },
+                                    child: Text(
+                                      "See all >>",
+                                      style: TextStyle(
+                                          fontSize: 14.0.w,
+                                          color: pasa,
+                                          fontFamily: 'Avenir',
+                                          fontWeight: FontWeight.normal),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsets.only(top: 20.0, right: 20.0),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    print('3');
-                                    var route = MaterialPageRoute(
-                                        builder: (context) => SeeAll10());
-                                    Navigator.of(context).push(route);
-                                  },
-                                  child: Text(
-                                    "See All >>",
-                                    style: TextStyle(color: Colors.deepPurple),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            child: itemsList(),
-                          ), // Items List Container
-                          SizedBox(
-                            height: 0.0,
-                          ),
-                          Row(
-                            children: <Widget>[
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 10.0, top: 20.0, bottom: 20.0),
-                                  child: Text(
-                                    "Categories",
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
+                              ],
+                            ),
+                            Container(
+                              child: itemsList(),
+                            ), // Items List Container
+                            SizedBox(
+                              height: 0.0,
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 10.0, top: 20.0, bottom: 20.0),
+                                    child: Text(
+                                      "Top deals",
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsets.only(top: 20.0, right: 20.0),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    print('3');
-                                    var route = MaterialPageRoute(
-                                        builder: (context) => SeeAll10());
-                                    Navigator.of(context).push(route);
-                                  },
-                                  child: Text(
-                                    "See All >>",
-                                    style: TextStyle(color: Colors.deepPurple),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            child: itemsList5(),
-                          ),
-                          Row(
-                            children: <Widget>[
-                              Expanded(
-                                child: Padding(
+                                Padding(
                                   padding:
-                                      EdgeInsets.only(left: 10.0, top: 20.0),
-                                  child: Text(
-                                    "Featured products",
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
+                                      EdgeInsets.only(top: 20.0, right: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      print('3');
+                                      var route = MaterialPageRoute(
+                                          builder: (context) => SeeAll10());
+                                      Navigator.of(context).push(route);
+                                    },
+                                    child: Text(
+                                      "See all >>",
+                                      style: TextStyle(
+                                          fontSize: 14.0.w,
+                                          color: pasa,
+                                          fontFamily: 'Avenir',
+                                          fontWeight: FontWeight.normal),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsets.only(top: 20.0, right: 20.0),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    print('2');
-                                  },
-                                  child: Text(
-                                    "See All >>",
-                                    style: TextStyle(color: Colors.deepPurple),
+                              ],
+                            ),
+                            Container(
+                              child: itemsList5(),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10.0, top: 20.0),
+                                    child: Text(
+                                      "Featured products",
+                                      style: TextStyle(
+                                          fontSize: 20.0.w,
+                                          color: Colors.black,
+                                          fontFamily: 'Avenir',
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            child: itemsList2(),
-                          ), // Items List Container
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(top: 20.0, right: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      print('2');
+                                    },
+                                    child: Text(
+                                      "See all >>",
+                                      style: TextStyle(
+                                          fontSize: 14.0.w,
+                                          color: pasa,
+                                          fontFamily: 'Avenir',
+                                          fontWeight: FontWeight.normal),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              child: itemsList2(),
+                            ), // Items List Container
 
-                          Row(
-                            children: <Widget>[
-                              Expanded(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.only(left: 10.0, top: 20.0),
-                                  child: Text(
-                                    "Search by brand",
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10.0, top: 20.0),
+                                    child: Text(
+                                      "Search by brand",
+                                      style: TextStyle(
+                                          fontSize: 20.0.w,
+                                          color: Colors.black,
+                                          fontFamily: 'Avenir',
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsets.only(top: 20.0, right: 20.0),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    print('object');
-                                  },
-                                  child: Text(
-                                    "See All >>",
-                                    style: TextStyle(color: Colors.deepPurple),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(top: 20.0, right: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      print('object');
+                                    },
+                                    child: Text(
+                                      "See all >>",
+                                      style: TextStyle(
+                                          fontSize: 14.0.w,
+                                          color: pasa,
+                                          fontFamily: 'Avenir',
+                                          fontWeight: FontWeight.normal),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            child: itemsList3(),
-                          ),
-                        ],
+                              ],
+                            ),
+                            Container(
+                              child: itemsList3(),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   )
@@ -1123,8 +1321,8 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       drawer: Drawer(
-          // child: signOutButton(),
-          ),
+        child: signOutButton(),
+      ),
     );
   }
 }

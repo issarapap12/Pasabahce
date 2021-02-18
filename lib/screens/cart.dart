@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:newflutter/data/constants.dart';
+import 'package:newflutter/screens/loadingOder.dart';
+import 'package:newflutter/screens/shippingAddress.dart';
+import 'package:newflutter/setting/myCard.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -38,27 +42,32 @@ class _CartState extends State<Cart> {
   }
 
   Widget display2() {
-    return RaisedButton(
-      color: Color(0xFFD6A578),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
-          color: Color(0xFF5F5D5D),
+    return ButtonTheme(
+      minWidth: 244.0.w,
+      height: 44.0.w,
+      child: RaisedButton(
+        color: pasa,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          side: BorderSide(
+            color: pasa,
+          ),
         ),
-      ),
-      child: Text(
-        'Place Order',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16.0,
+        child: Text(
+          'PLACE ORDER',
+          style: TextStyle(
+              fontSize: 15.0.w,
+              color: Colors.white,
+              fontFamily: 'Avenir',
+              fontWeight: FontWeight.w600),
         ),
+        onPressed: () {
+          print('You Click Place Order');
+          MaterialPageRoute materialPageRoute = MaterialPageRoute(
+              builder: (BuildContext context) => LoadingOrder());
+          Navigator.of(context).push(materialPageRoute);
+        },
       ),
-      onPressed: () {
-        print('You Click Place Order');
-        // MaterialPageRoute materialPageRoute =
-        //     MaterialPageRoute(builder: (BuildContext context) => Register());
-        // Navigator.of(context).push(materialPageRoute);
-      },
     );
   }
 
@@ -71,6 +80,19 @@ class _CartState extends State<Cart> {
         child: CustomScrollView(
           slivers: <Widget>[
             new SliverAppBar(
+              title: Center(
+                child: Container(
+                  padding: EdgeInsets.only(right: 50.w),
+                  child: Text(
+                    'ORDER DETAILS',
+                    style: TextStyle(
+                        fontSize: 13.0.w,
+                        color: Colors.white,
+                        fontFamily: 'AvenirBook',
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
               expandedHeight: mediaQuery.size.height / 10,
               backgroundColor: Colors.black,
               shape: RoundedRectangleBorder(
@@ -81,7 +103,7 @@ class _CartState extends State<Cart> {
               delegate: SliverChildListDelegate(
                 [
                   Container(
-                    // padding: EdgeInsets.zero,
+                    padding: EdgeInsets.zero,
                     height: mediaQuery.size.height,
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -101,6 +123,7 @@ class _CartState extends State<Cart> {
                         ),
                       ),
                       child: ListView(
+                        padding: EdgeInsets.only(top: 25.0),
                         children: <Widget>[
                           Column(
                             // mainAxisAlignment: MainAxisAlignment.start,
@@ -108,21 +131,62 @@ class _CartState extends State<Cart> {
                               Row(
                                 children: <Widget>[
                                   SizedBox(
-                                    width: 25.0,
+                                    width: 25.0.w,
                                   ),
-                                  Text('Shipping to'),
+                                  Text(
+                                    'SHIPPING TO',
+                                    style: TextStyle(
+                                        fontSize: 14.0.w,
+                                        color: shipping,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal),
+                                  ),
                                   SizedBox(
-                                    width: 200.0,
+                                    width: 180.0,
                                   ),
                                   FlatButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return ShippingAddress();
+                                          },
+                                        ),
+                                      );
+                                    },
                                     child: Text(
                                       'Change',
                                       style: TextStyle(
                                         color: pasa,
+                                        fontSize: 14.0.w,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal,
                                       ),
                                     ),
                                   )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 15.0.w,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: 25.0,
+                                  ),
+                                  Container(
+                                    padding:
+                                        EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 5.0),
+                                    child: Text(
+                                      "Dereboyu Cad. No.23,",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 14.0.w,
+                                        fontFamily: 'AvenirBook',
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                               Row(
@@ -130,18 +194,26 @@ class _CartState extends State<Cart> {
                                   SizedBox(
                                     width: 25.0,
                                   ),
-                                  Flexible(
-                                    //newly added
-                                    child: Container(
-                                      padding: EdgeInsets.fromLTRB(
-                                          0.0, 0.0, 0.0, 15.0),
-                                      child: Text(
-                                          "Dereboyu Cad. No.23, 34410 - Istanbul/Türkiye",
-                                          style: TextStyle(),
-                                          softWrap: true),
+                                  Text(
+                                    "34410 - Istanbul/Türkiye",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14.0.w,
+                                      fontFamily: 'AvenirBook',
+                                      fontWeight: FontWeight.normal,
                                     ),
                                   ),
                                 ],
+                              ),
+                              SizedBox(
+                                height: 15.0,
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(
+                                    left: 15.0, right: 15.0),
+                                child: Divider(
+                                  color: Colors.black26,
+                                ),
                               ),
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -151,17 +223,34 @@ class _CartState extends State<Cart> {
                                       SizedBox(
                                         width: 25.0,
                                       ),
-                                      Text('PAY WITH CREDIT CARD'),
+                                      Text(
+                                        'PAY WITH CREDIT CARD',
+                                        style: TextStyle(
+                                            fontSize: 14.0.w,
+                                            color: Colors.black,
+                                            fontFamily: 'AvenirBook',
+                                            fontWeight: FontWeight.normal),
+                                      ),
                                       SizedBox(
-                                        width: 120.0,
+                                        width: 110.0,
                                       ),
                                       FlatButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                              builder: (context) {
+                                                return MyCard();
+                                              },
+                                            ),
+                                          );
+                                        },
                                         child: Text(
                                           'Change',
                                           style: TextStyle(
-                                            color: pasa,
-                                          ),
+                                              fontSize: 14.0.w,
+                                              color: pasa,
+                                              fontFamily: 'AvenirBook',
+                                              fontWeight: FontWeight.normal),
                                         ),
                                       )
                                     ],
@@ -178,11 +267,26 @@ class _CartState extends State<Cart> {
                                               0.0, 0.0, 0.0, 15.0),
                                           child: Text(
                                               "XXXX - XXXX - XXXX - 9123",
-                                              style: TextStyle(),
+                                              style: TextStyle(
+                                                  fontSize: 14.0.w,
+                                                  color: Colors.black,
+                                                  fontFamily: 'AvenirBook',
+                                                  fontWeight:
+                                                      FontWeight.normal),
                                               softWrap: true),
                                         ),
                                       ),
                                     ],
+                                  ),
+                                  SizedBox(
+                                    height: 15.0,
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        left: 15.0, right: 15.0),
+                                    child: Divider(
+                                      color: Colors.black26,
+                                    ),
                                   ),
                                   Column(
                                     children: <Widget>[
@@ -199,8 +303,16 @@ class _CartState extends State<Cart> {
                                       ),
                                       Text(
                                         'ORDER DETAILS',
+                                        style: TextStyle(
+                                            fontSize: 14.0.w,
+                                            color: shipping,
+                                            fontFamily: 'AvenirBook',
+                                            fontWeight: FontWeight.normal),
                                       ),
                                     ],
+                                  ),
+                                  SizedBox(
+                                    height: 15.0,
                                   ),
                                   Row(
                                     children: <Widget>[
@@ -217,12 +329,29 @@ class _CartState extends State<Cart> {
                                       ),
                                       Column(
                                         children: [
-                                          Text('Gulcehre Ibrik'),
+                                          Text(
+                                            'Gulcehre Ibrik',
+                                            style: TextStyle(
+                                                fontSize: 14.0.w,
+                                                color: Colors.black,
+                                                fontFamily: 'AvenirBook',
+                                                fontWeight: FontWeight.normal),
+                                          ),
                                           Row(
                                             children: [
-                                              Text(
-                                                '€5650',
-                                                // textAlign: TextAlign.left,
+                                              Container(
+                                                padding: EdgeInsets.only(
+                                                    right: 30.0, top: 5.0),
+                                                child: Text(
+                                                  '€5650',
+                                                  style: TextStyle(
+                                                      fontSize: 20.0.w,
+                                                      color: Colors.black,
+                                                      fontFamily: 'AvenirHeavy',
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                  // textAlign: TextAlign.left,
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -240,6 +369,39 @@ class _CartState extends State<Cart> {
                                         width: 90.0,
                                         height: 90.0,
                                       ),
+                                      SizedBox(
+                                        width: 25.0,
+                                      ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'Mystical Vase',
+                                            style: TextStyle(
+                                                fontSize: 14.0.w,
+                                                color: Colors.black,
+                                                fontFamily: 'AvenirBook',
+                                                fontWeight: FontWeight.normal),
+                                          ),
+                                          Row(
+                                            children: [
+                                              Container(
+                                                padding: EdgeInsets.only(
+                                                    right: 30.0, top: 5.0),
+                                                child: Text(
+                                                  '€4850',
+                                                  style: TextStyle(
+                                                      fontSize: 20.0.w,
+                                                      color: Colors.black,
+                                                      fontFamily: 'AvenirBook',
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                  // textAlign: TextAlign.left,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                   Row(
@@ -252,7 +414,50 @@ class _CartState extends State<Cart> {
                                         width: 90.0,
                                         height: 90.0,
                                       ),
+                                      SizedBox(
+                                        width: 25.0,
+                                      ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'Mystical Vase',
+                                            style: TextStyle(
+                                                fontSize: 14.0.w,
+                                                color: Colors.black,
+                                                fontFamily: 'AvenirBook',
+                                                fontWeight: FontWeight.normal),
+                                          ),
+                                          Row(
+                                            children: [
+                                              Container(
+                                                padding: EdgeInsets.only(
+                                                    right: 30.w, top: 5),
+                                                child: Text(
+                                                  '€3150',
+                                                  style: TextStyle(
+                                                      fontSize: 20.0.w,
+                                                      color: Colors.black,
+                                                      fontFamily: 'AvenirBook',
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                  // textAlign: TextAlign.left,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ],
+                                  ),
+                                  SizedBox(
+                                    height: 15.0,
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        left: 15.0, right: 15.0),
+                                    child: Divider(
+                                      color: Colors.black26,
+                                    ),
                                   ),
                                   Row(
                                     children: <Widget>[
@@ -260,8 +465,18 @@ class _CartState extends State<Cart> {
                                         width: 25.0,
                                         height: 30.0,
                                       ),
-                                      Text('SHipping Method'),
+                                      Text(
+                                        'SHIPPING METHOD',
+                                        style: TextStyle(
+                                            fontSize: 14.0.w,
+                                            color: shipping,
+                                            fontFamily: 'AvenirBook',
+                                            fontWeight: FontWeight.normal),
+                                      ),
                                     ],
+                                  ),
+                                  SizedBox(
+                                    height: 5.0,
                                   ),
                                   Row(
                                     children: <Widget>[
@@ -282,6 +497,11 @@ class _CartState extends State<Cart> {
                                       ),
                                       Text(
                                         'Standard Shipping (16 days)',
+                                        style: TextStyle(
+                                            fontSize: 14.0.w,
+                                            color: Colors.black,
+                                            fontFamily: 'AvenirBook',
+                                            fontWeight: FontWeight.normal),
                                       ),
                                       Row(
                                         mainAxisAlignment:
@@ -291,12 +511,15 @@ class _CartState extends State<Cart> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           SizedBox(
-                                            width: 90.0,
+                                            width: 85.0,
                                           ),
                                           Text(
                                             'Free',
                                             style: TextStyle(
+                                              fontSize: 14.0.w,
                                               color: pasa,
+                                              fontFamily: 'AvenirHeavy',
+                                              fontWeight: FontWeight.normal,
                                             ),
                                           ),
                                         ],
@@ -309,24 +532,35 @@ class _CartState extends State<Cart> {
                                         width: 25.0,
                                       ),
                                       Radio(
-                                        value: 2,
-                                        groupValue: group,
-                                        onChanged: (T) {
-                                          print(T);
+                                          value: 2,
+                                          groupValue: group,
+                                          onChanged: (T) {
+                                            print(T);
 
-                                          setState(() {
-                                            group = T;
-                                          });
-                                        },
-                                        activeColor: Colors.amber,
-                                      ),
+                                            setState(() {
+                                              group = T;
+                                            });
+                                          },
+                                          activeColor: pasa),
                                       Text(
                                         'Express (8 days)',
+                                        style: TextStyle(
+                                            fontSize: 14.0.w,
+                                            color: Colors.black,
+                                            fontFamily: 'AvenirBook',
+                                            fontWeight: FontWeight.normal),
                                       ),
                                       SizedBox(
                                         width: 170.0,
                                       ),
-                                      Text('€$priceExpres')
+                                      Text(
+                                        '€$priceExpres',
+                                        style: TextStyle(
+                                            fontSize: 14.0.w,
+                                            color: Colors.black,
+                                            fontFamily: 'AvenirBook',
+                                            fontWeight: FontWeight.normal),
+                                      )
                                     ],
                                   ),
                                   Row(
@@ -344,15 +578,27 @@ class _CartState extends State<Cart> {
                                             group = T;
                                           });
                                         },
-                                        activeColor: Colors.amber,
+                                        activeColor: pasa,
                                       ),
                                       Text(
                                         'Premium (1 day)',
+                                        style: TextStyle(
+                                            fontSize: 14.0.w,
+                                            color: Colors.black,
+                                            fontFamily: 'AvenirBook',
+                                            fontWeight: FontWeight.normal),
                                       ),
                                       SizedBox(
                                         width: 170.0,
                                       ),
-                                      Text('€$pricePremium')
+                                      Text(
+                                        '€$pricePremium',
+                                        style: TextStyle(
+                                            fontSize: 14.0.w,
+                                            color: Colors.black,
+                                            fontFamily: 'AvenirBook',
+                                            fontWeight: FontWeight.normal),
+                                      )
                                     ],
                                   ),
                                 ],
@@ -382,9 +628,33 @@ class _CartState extends State<Cart> {
                                       width: 30.0,
                                     ),
                                     Text(
-                                      'Subtotal',
-                                      style: TextStyle(color: Colors.white),
+                                      'SUBTOTAL',
+                                      style: TextStyle(
+                                          fontSize: 14.0.w,
+                                          color: Colors.white,
+                                          fontFamily: 'AvenirBook',
+                                          fontWeight: FontWeight.normal),
                                     ),
+                                    Row(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 220.0),
+                                          child: Row(
+                                            children: <Widget>[
+                                              Text(
+                                                '€13.650',
+                                                style: TextStyle(
+                                                    fontSize: 14.0.w,
+                                                    color: Colors.white,
+                                                    fontFamily: 'AvenirBook',
+                                                    fontWeight:
+                                                        FontWeight.normal),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    )
                                   ],
                                 ),
                                 Row(
@@ -394,9 +664,33 @@ class _CartState extends State<Cart> {
                                       width: 30.0,
                                     ),
                                     Text(
-                                      'Shipping',
-                                      style: TextStyle(color: Colors.white),
+                                      'SHIPPING',
+                                      style: TextStyle(
+                                          fontSize: 14.0.w,
+                                          color: Colors.white,
+                                          fontFamily: 'AvenirBook',
+                                          fontWeight: FontWeight.normal),
                                     ),
+                                    Row(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 195.0),
+                                          child: Row(
+                                            children: <Widget>[
+                                              Text(
+                                                'Please select',
+                                                style: TextStyle(
+                                                    fontSize: 14.0.w,
+                                                    color: pp,
+                                                    fontFamily: 'AvenirBook',
+                                                    fontWeight:
+                                                        FontWeight.normal),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    )
                                   ],
                                 ),
                                 SizedBox(
@@ -406,12 +700,36 @@ class _CartState extends State<Cart> {
                                   children: [
                                     SizedBox(
                                       height: 30.0,
-                                      width: 30.0,
+                                      width: 25.0,
                                     ),
                                     Text(
                                       'Total to Pay',
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(
+                                          fontSize: 20.0.w,
+                                          color: Colors.white,
+                                          fontFamily: 'AvenirBook',
+                                          fontWeight: FontWeight.bold),
                                     ),
+                                    Row(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 165.0),
+                                          child: Row(
+                                            children: <Widget>[
+                                              Text(
+                                                '€13.690',
+                                                style: TextStyle(
+                                                    fontSize: 20.0.w,
+                                                    color: Colors.white,
+                                                    fontFamily: 'AvenirBook',
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    )
                                   ],
                                 ),
                                 SizedBox(

@@ -392,11 +392,11 @@ class _GodBowlState extends State<GodBowl> with SingleTickerProviderStateMixin {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0),
         side: BorderSide(
-          color: Color(0xFF5F5D5D),
+          color: pasa,
         ),
       ),
       child: Text(
-        '    Add to cart    ',
+        '         Add to cart        ',
         style: TextStyle(
           color: Colors.white,
           fontSize: 16.0,
@@ -476,7 +476,9 @@ class _GodBowlState extends State<GodBowl> with SingleTickerProviderStateMixin {
                   Icons.arrow_back,
                   color: Colors.black,
                 ),
-                onPressed: () => Navigator.pop(context),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
               ),
             ),
             SliverList(
@@ -732,7 +734,7 @@ class _GodBowlState extends State<GodBowl> with SingleTickerProviderStateMixin {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             IconButton(
@@ -740,7 +742,7 @@ class _GodBowlState extends State<GodBowl> with SingleTickerProviderStateMixin {
             addButton(),
             // Spacer(),
 
-            IconButton(icon: Icon(Icons.screen_share), onPressed: () {}),
+            IconButton(icon: Icon(Icons.share), onPressed: () {}),
             // IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
           ],
         ),
